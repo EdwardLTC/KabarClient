@@ -1,0 +1,106 @@
+{
+    "project_info": {
+        "project_number": "1014073930413",
+        "project_id": "obl-edu",
+        "storage_bucket": "obl-edu.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1014073930413:android:3fcae2f61f4d50a64f8c24",
+                "android_client_info": {
+                    "package_name": "com.oneblocklabs.edu"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1014073930413-76c3n27tj8enuu7sam3dsgh7veghot42.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.oneblocklabs.edu",
+                        "certificate_hash": "72ab3fb28696559f86bd748cacb0165776d66331"
+                    }
+                },
+                {
+                    "client_id": "1014073930413-7ncdv84uf38vt9behs72vi1bcphtm0dg.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBTkc9AUnObvlSfB9T9SUwlXjru8c0xFS8"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1014073930413-5q344f7eiv1p60d1mvpgk6mvnsocmnoi.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1014073930413-6irqetugov8rvgl68obaik06sjbqdtf1.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.oneblocklabs.edu"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1014073930413:android:cec2313f1d40ffdb4f8c24",
+                "android_client_info": {
+                    "package_name": "com.oneblocklabs.edu.dev"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1014073930413-b25k7231t5r1d1kn3q7al6pf4a20llvk.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.oneblocklabs.edu.dev",
+                        "certificate_hash": "72ab3fb28696559f86bd748cacb0165776d66331"
+                    }
+                },
+                {
+                    "client_id": "1014073930413-obc67s0pds92stdpqherp3msbjbolluf.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.oneblocklabs.edu.dev",
+                        "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+                    }
+                },
+                {
+                    "client_id": "1014073930413-7ncdv84uf38vt9behs72vi1bcphtm0dg.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBTkc9AUnObvlSfB9T9SUwlXjru8c0xFS8"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1014073930413-5q344f7eiv1p60d1mvpgk6mvnsocmnoi.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1014073930413-6irqetugov8rvgl68obaik06sjbqdtf1.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.oneblocklabs.edu"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

@@ -1,0 +1,54 @@
+{
+    "project_info": {
+        "project_number": "1014073930413",
+        "project_id": "obl-edu",
+        "storage_bucket": "obl-edu.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1014073930413:android:cec2313f1d40ffdb4f8c24",
+                "android_client_info": {
+                    "package_name": "com.oneblocklabs.edu.dev"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1014073930413-obc67s0pds92stdpqherp3msbjbolluf.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.oneblocklabs.edu.dev",
+                        "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+                    }
+                },
+                {
+                    "client_id": "1014073930413-7ncdv84uf38vt9behs72vi1bcphtm0dg.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBTkc9AUnObvlSfB9T9SUwlXjru8c0xFS8"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1014073930413-5q344f7eiv1p60d1mvpgk6mvnsocmnoi.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1014073930413-ncto1c9jfkitf62isa58prpevq982c6a.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.oneblocklabs.edu.dev"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Value from build type: debug -->
+    <integer name="react_native_dev_server_port">8081</integer>
+    <!-- Value from build type: debug -->
+    <integer name="react_native_inspector_proxy_port">8081</integer>
+    <!-- Value from default config. -->
+    <string name="APP_BUILD_CODE_ANDROID" translatable="false">"1"</string>
+    <!-- Value from default config. -->
+    <string name="APP_BUILD_CODE_IOS" translatable="false">"1"</string>
+    <!-- Value from default config. -->
+    <string name="APP_ID_ANDROID" translatable="false">"com.fservice"</string>
+    <!-- Value from default config. -->
+    <string name="APP_ID_IOS" translatable="false">"com.fpoly.service"</string>
+    <!-- Value from default config. -->
+    <string name="APP_NAME" translatable="false">"FService"</string>
+    <!-- Value from default config. -->
+    <string name="APP_VERSION" translatable="false">"1.0.0"</string>
+    <!-- Value from default config. -->
+    <string name="BASE_URL" translatable="false">"https://urlserver.com"</string>
+    <!-- Value from default config. -->
+    <string name="ENV" translatable="false">"PRODCUTION"</string>
+    <!-- Value from default config. -->
+    <string name="app_name" translatable="false">FService</string>
+
+</resources>
