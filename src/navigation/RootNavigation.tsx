@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import { Login, Register } from '@screens/auth';
-import { Campaign, Certificate, Home, Setting } from '@screens/Main';
+import { Bookmark, Explore, Home, Profile } from '@screens/Main';
 import React, { FC } from 'react';
 import { BottomBar } from './components';
 import { navigationRef } from './NavigationServices';
@@ -24,9 +24,9 @@ const BottomTabsNavigation: FC<{}> = () => {
             tabBar={(props) => <BottomBar {...props} />}
         >
             <BottomTabs.Screen key={routes.home} name={routes.home} component={Home} />
-            <BottomTabs.Screen key={routes.campaign} name={routes.campaign} component={Campaign} />
-            <BottomTabs.Screen key={routes.setting} name={routes.setting} component={Setting} />
-            <BottomTabs.Screen key={routes.certificate} name={routes.certificate} component={Certificate} />
+            <BottomTabs.Screen key={routes.explore} name={routes.explore} component={Explore} />
+            <BottomTabs.Screen key={routes.bookmark} name={routes.bookmark} component={Bookmark} />
+            <BottomTabs.Screen key={routes.profile} name={routes.profile} component={Profile} />
         </BottomTabs.Navigator>
     );
 };

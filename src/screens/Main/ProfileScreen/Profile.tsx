@@ -1,4 +1,4 @@
 import React from 'react'
-export const Certificate = () => {
+export const Profile = () => {
   return <></>
 }

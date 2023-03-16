@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 import Config from 'react-native-config'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-export const Campaign = () => {
+export const Explore = () => {
   console.log({ Config })
   return (
     <SafeAreaView>

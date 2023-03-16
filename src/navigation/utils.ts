@@ -2,8 +2,8 @@ export const routes = {
     login: 'LOGIN',
     register: 'LOGOUT',
     main: 'MAIN',
-    setting: 'SETTING',
-    campaign: 'CAMPAIGN',
-    certificate: 'CERTIFICATE',
+    profile: 'PROFILE',
+    bookmark: 'BOOKMARK',
+    explore: 'EXPLORE',
     home: 'HOME',
 };
