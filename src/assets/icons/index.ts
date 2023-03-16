@@ -1,3 +1,3 @@
-export * from './HomeIcon';
-export * from './EyeOff';
-export * from './EyeOn';
+export * from './bottomIcon'
+export * from './EyeOff'
+export * from './EyeOn'

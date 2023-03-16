@@ -210,6 +210,15 @@ export interface CommonTextProps extends DefaultStyleProps, RNTextProps {
     | '600'
     | '700'
     | '800'
-    | '900' 
+    | '900'
     | undefined
+
+  /**
+   *
+   * ```
+   * letterSpacing='number'<=> { letterSpacing: number }
+   * ```
+   *
+   */
+  letterSpacing?: number
 }

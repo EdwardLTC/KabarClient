@@ -1,6 +1,6 @@
 import { Block, Text } from '@components'
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
-import { HomeDappIcon } from '@assets'
+import { HomeIcon, ExploreIcon, BookmarkIcon, ProfileIcon } from '@assets'
 import React, { FC } from 'react'
 import { TouchableHighlight, Dimensions } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -27,18 +27,19 @@ export const BottomBar: FC<BottomTabBarProps> = (props) => {
           const widthItemBottomMenu = (Dimensions.get('window').width - 96) / 4 // chiều rộng mỗi block trong bottom menu
 
           let icon;
+          let color = isFocused ? colors.blue : colors.secondaryText
           switch (index) {
             case 0:
-              icon = <HomeDappIcon></HomeDappIcon>;
+              icon = <HomeIcon color={color}></HomeIcon>;
               break;
             case 1:
-              icon = <HomeDappIcon></HomeDappIcon>;
+              icon = <ExploreIcon color={color} ></ExploreIcon>;
               break;
             case 2:
-              icon = <HomeDappIcon></HomeDappIcon>;
+              icon = <BookmarkIcon color={color} ></BookmarkIcon>;
               break;
             default:
-              icon = <HomeDappIcon></HomeDappIcon>;
+              icon = <ProfileIcon color={color}></ProfileIcon>;
               break;
           }
 

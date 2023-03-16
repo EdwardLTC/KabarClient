@@ -11,7 +11,7 @@ export type StatusBarProps = {
 }
 
 export const StatusBar: FC<StatusBarProps> = (props) => {
-  const { theme: themeStore } = useAppSelector((state) => state.root.themeApp)
+  const { theme: themeStore } = useAppSelector((state: { root: { themeApp: any } }) => state.root.themeApp)
   const styles = useStyles(props)
   const theme = useTheme()
   const { statusColor, children } = props

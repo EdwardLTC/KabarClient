@@ -4,23 +4,6 @@
             "outputFile": "com.fservice.app-mergeDebugResources-30:/values/values.xml",
             "map": [
                 {
-                    "source": "G:\\NodeJS\\client\\android\\app\\build\\generated\\res\\resValues\\debug\\values\\gradleResValues.xml",
-                    "from": {
-                        "startLines": "6,8,10,12,14,16,18,20,22,24,26",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "161,269,380,498,612,733,855,966,1077,1201,1309",
-                        "endColumns": "63,68,75,71,78,79,68,68,81,65,66",
-                        "endOffsets": "220,333,451,565,686,808,919,1030,1154,1262,1371"
-                    },
-                    "to": {
-                        "startLines": "672,673,680,681,682,683,684,685,686,687,717",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "42755,42819,43335,43411,43483,43562,43642,43711,43780,43862,45950",
-                        "endColumns": "63,68,75,71,78,79,68,68,81,65,66",
-                        "endOffsets": "42814,42883,43406,43478,43557,43637,43706,43775,43857,43923,46012"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Edward\\.gradle\\caches\\transforms-3\\8fac770e659683206d28c35b067abb41\\transformed\\jetified-drawee-2.6.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,141",
@@ -97,23 +80,6 @@
                     }
                 },
                 {
-                    "source": "G:\\NodeJS\\client\\android\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endColumns": "56",
-                        "endOffsets": "109"
-                    },
-                    "to": {
-                        "startLines": "169",
-                        "startColumns": "4",
-                        "startOffsets": "10882",
-                        "endColumns": "56",
-                        "endOffsets": "10934"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Edward\\.gradle\\caches\\transforms-3\\0bbaa5972f900275fec64cf526ac0bea\\transformed\\lifecycle-viewmodel-2.3.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -128,6 +94,25 @@
                         "startOffsets": "41387",
                         "endColumns": "49",
                         "endOffsets": "41432"
+                    }
+                },
+                {
+                    "source": "G:\\Kabar\\client\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "273"
+                    },
+                    "to": {
+                        "startLines": "865",
+                        "startColumns": "4",
+                        "startOffsets": "63827",
+                        "endLines": "868",
+                        "endColumns": "12",
+                        "endOffsets": "64005"
                     }
                 },
                 {
@@ -258,22 +243,20 @@
                     }
                 },
                 {
-                    "source": "G:\\NodeJS\\client\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "G:\\Kabar\\client\\android\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
                     "from": {
-                        "startLines": "3",
+                        "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "273"
+                        "endColumns": "56",
+                        "endOffsets": "109"
                     },
                     "to": {
-                        "startLines": "865",
+                        "startLines": "169",
                         "startColumns": "4",
-                        "startOffsets": "63827",
-                        "endLines": "868",
-                        "endColumns": "12",
-                        "endOffsets": "64005"
+                        "startOffsets": "10882",
+                        "endColumns": "56",
+                        "endOffsets": "10934"
                     }
                 },
                 {
@@ -329,6 +312,23 @@
                         "endLines": "4607,4613,4623,6713,6717",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "302363,302541,302825,372734,372861"
+                    }
+                },
+                {
+                    "source": "G:\\Kabar\\client\\android\\app\\build\\generated\\res\\resValues\\debug\\values\\gradleResValues.xml",
+                    "from": {
+                        "startLines": "6,8,10,12,14,16,18,20,22,24,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "161,269,380,498,612,733,855,966,1077,1201,1309",
+                        "endColumns": "63,68,75,71,78,79,68,68,81,65,66",
+                        "endOffsets": "220,333,451,565,686,808,919,1030,1154,1262,1371"
+                    },
+                    "to": {
+                        "startLines": "672,673,680,681,682,683,684,685,686,687,717",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "42755,42819,43335,43411,43483,43562,43642,43711,43780,43862,45950",
+                        "endColumns": "63,68,75,71,78,79,68,68,81,65,66",
+                        "endOffsets": "42814,42883,43406,43478,43557,43637,43706,43775,43857,43923,46012"
                     }
                 },
                 {
