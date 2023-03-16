@@ -24,8 +24,7 @@ export const Login = () => {
           marginTop={4}
           size={20}
           lineHeight={30}
-          fontWeight="400"
-          color={colors.secondaryText}
+          fontWeight="400" color={colors.secondaryText}
         >
           Welcome back you’ve been missed
         </Text>
