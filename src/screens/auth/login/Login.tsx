@@ -96,13 +96,8 @@ export const Login = () => {
         navigate(routes.register)
     }
 
-    
     return (
-        <Container
-            style={styles.root}
-            statusColor={colors.background}
-            backgroundColor={colors.background}
-        >
+        <Container style={styles.root} >
             {_renderHeader()}
             {_renderForm()}
             {_renderButtonDoLogin()}
