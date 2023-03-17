@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-
 import Svg, { SvgProps, Path } from 'react-native-svg'
 
 export const LogoIcon: FC<SvgProps> = (props) => {
