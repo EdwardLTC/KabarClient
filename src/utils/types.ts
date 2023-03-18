@@ -12,3 +12,10 @@ export type Article = {
   createdAt: string
   createdBy: ArticleCreateedBy
 }
+
+export type Topic = {
+  _id: string
+  title: string
+  content: string
+  image: string
+}
