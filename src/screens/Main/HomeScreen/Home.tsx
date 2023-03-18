@@ -3,26 +3,10 @@ import { useTheme, makeStyles } from '@themes'
 import React, { useRef } from 'react'
 import { BellIcon, LogoIcon } from '@assets/icons'
 import { TouchableOpacity, Animated, ScrollView } from 'react-native'
-import { Article } from '@utils/types'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
 import { DinamicArticle } from '@components/common/DynamicArticle'
-
-const data: Article[] = Array.from({ length: 10 }).map(
-  (_, index) =>
-    ({
-      _id: index.toString(),
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      image: 'https://picsum.photos/200/300',
-      createdAt: new Date(),
-      createdBy: {
-        _id: index.toString(),
-        name: 'John Doe',
-        avatar: 'https://picsum.photos/200/300',
-      },
-    } as unknown as Article),
-)
+import { ArticleList } from '@reduxs'
 
 //en_US
 export const Home = () => {
@@ -49,7 +33,7 @@ export const Home = () => {
       <TouchableOpacity onPress={navigateToArticleDetail}>
         <DinamicArticle
           animHeaderValue={scrollOffsetY}
-          article={data[0]}
+          article={ArticleList[0]}
         ></DinamicArticle>
       </TouchableOpacity>
     )
@@ -87,7 +71,7 @@ export const Home = () => {
         )}
         showsVerticalScrollIndicator={false}
       >
-        {data.map((item) => {
+        {ArticleList.map((item) => {
           return (
             <TouchableOpacity onPress={navigateToArticleDetail} key={item._id}>
               <ArticleComponent article={item}></ArticleComponent>

@@ -4,59 +4,28 @@ import {
   Text,
   TopicComponent,
 } from '@components'
+import { ArticleList, TopicList } from '@reduxs'
 import { useTheme, makeStyles } from '@themes'
 import { Article, Topic } from '@utils/types'
 import React from 'react'
 import { SectionList } from 'react-native'
-
-const popular: Article[] = Array.from({ length: 10 }).map(
-  (_, index) =>
-    ({
-      _id: index.toString(),
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      image: 'https://picsum.photos/200/300',
-      createdAt: new Date(),
-      createdBy: {
-        _id: index.toString(),
-        name: 'John Doe',
-        avatar: 'https://picsum.photos/200/300',
-      },
-    } as unknown as Article),
-)
-
-const topic: Topic[] = [
-  {
-    _id: '1',
-    title: 'Health',
-    content:
-      'Get energizing workout moves, healthy recipes, and advice on losing weight and feeling great from Health.com. Find out how to manage diabetes and depression, prevent heart attacks, and more.',
-    image: 'https://picsum.photos/200/300',
-  },
-  {
-    _id: '2',
-    title: 'Technology',
-    content:
-      'the application of scientific knowledge to the practical aims of human life or to the design and construction of machines and structures.',
-    image: 'https://picsum.photos/200/300',
-  },
-  {
-    _id: '3',
-    title: 'Art',
-    content:
-      'Art is a diverse range of human activity, and result. In its broadest sense, art is the expression or application of human creative skill and imagination, usually in a visual form such as painting or sculpture, producing works to be appreciated primarily for their beauty or emotional power.',
-    image: 'https://picsum.photos/200/300',
-  },
-]
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { navigate } from '@navigation/NavigationServices'
+import { routes } from '@navigation'
 
 const data = [
-  { title: 'Topic', data: topic, renderType: '0' },
-  { title: 'Popular', data: popular, renderType: '1' },
+  { title: 'Topic', data: TopicList, renderType: '0' },
+  { title: 'Popular', data: ArticleList, renderType: '1' },
 ]
 
 export const Explore = () => {
   const styles = useStyles()
   const { colors } = useTheme()
+
+  const navigateToArticleDetail = () => {
+    navigate(routes.articleDetail)
+  }
+
   return (
     <Container style={styles.root}>
       <Text
@@ -74,12 +43,14 @@ export const Explore = () => {
         keyExtractor={(item, index) => item._id + index}
         renderItem={({ item, section }) => {
           if (section.renderType === '0') {
-            return <TopicComponent topic={item}></TopicComponent>
+            return <TopicComponent topic={item as Topic}></TopicComponent>
           } else {
             return (
-              <ArticleComponentBig
-                article={item as Article}
-              ></ArticleComponentBig>
+              <TouchableOpacity onPress={navigateToArticleDetail}>
+                <ArticleComponentBig
+                  article={item as Article}
+                ></ArticleComponentBig>
+              </TouchableOpacity>
             )
           }
         }}
