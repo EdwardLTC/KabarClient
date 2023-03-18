@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.fservice.app-mergeDebugResources-30:/values-ja/values-ja.xml",
+            "outputFile": "com.fservice.app-mergeDebugResources-31:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Edward\\.gradle\\caches\\transforms-3\\c0b86808731a4a9f10bb9c1bec75b274\\transformed\\jetified-play-services-basement-17.0.0\\res\\values-ja\\values.xml",

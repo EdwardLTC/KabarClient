@@ -1,22 +1,34 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-type AuthState = {
-    token?: string;
-};
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { AuthState } from '@reduxs/types'
+import { RootReducerName } from './type'
 
 const defaultAuthState: AuthState = {
-    token: undefined,
-};
+  enableLogin: true,
+  token: '',
+  user: {
+    _id: '',
+    name: '',
+    address: '',
+    phone: '',
+    avatar: '',
+    dob: '',
+    email: '',
+    createdAt: '',
+    updatedAt: '',
+  },
+}
 
 const authSlice = createSlice({
-    name: 'auth',
-    initialState: defaultAuthState,
-    reducers: {
-        authToken(state: AuthState, action: PayloadAction<string>) {
-            state.token = action.payload;
-        },
+  name: RootReducerName.auth,
+  initialState: defaultAuthState,
+  reducers: {
+    authInfo(state: AuthState, action: PayloadAction<AuthState>) {
+      state.token = action.payload.token
+      state.user = action.payload.user
+      state.enableLogin = false
     },
-});
+  },
+})
 
-export const { authToken } = authSlice.actions;
-export const AuthReducer = authSlice.reducer;
+export const { authInfo } = authSlice.actions
+export const AuthReducer = authSlice.reducer

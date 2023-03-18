@@ -9,6 +9,7 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\Edward\.gradle\cache
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\Edward\.gradle\caches\transforms-3\e32b7eeb3398efff4e100fae60e161ae\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\Edward\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-config] G:\Kabar\client\node_modules\react-native-config\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:lottie-react-native] G:\Kabar\client\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-device-info] G:\Kabar\client\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-encrypted-storage] G:\Kabar\client\node_modules\react-native-encrypted-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [:react-native-fast-image] G:\Kabar\client\node_modules\react-native-fast-image\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -36,6 +37,7 @@ MERGED from [com.facebook.fresco:memory-type-ashmem:2.6.0] C:\Users\Edward\.grad
 MERGED from [com.facebook.fresco:imagepipeline:2.6.0] C:\Users\Edward\.gradle\caches\transforms-3\f12e9d58f545dc528f5c5d303fc2b907\transformed\jetified-imagepipeline-2.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] C:\Users\Edward\.gradle\caches\transforms-3\72898a632139019e38bc9fa5121bc1f7\transformed\jetified-nativeimagetranscoder-2.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] C:\Users\Edward\.gradle\caches\transforms-3\1d1edd6ff4f1a69fd6c2a9b7b9361b66\transformed\jetified-imagepipeline-base-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\Edward\.gradle\caches\transforms-3\9040f21d44789c233f6e942de90f3523\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Edward\.gradle\caches\transforms-3\ff7f9e1ea9c2e709fffb9e018f2252cf\transformed\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Edward\.gradle\caches\transforms-3\1b40e4574e76bff5831ef4bf4270480d\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Edward\.gradle\caches\transforms-3\7aa95ea95f7888771eaaf73aa7600b26\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
@@ -115,6 +117,8 @@ uses-permission#android.permission.INTERNET
 ADDED from G:\Kabar\client\android\app\src\main\AndroidManifest.xml:4:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\Edward\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\Edward\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
+MERGED from [:lottie-react-native] G:\Kabar\client\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+MERGED from [:lottie-react-native] G:\Kabar\client\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\Edward\.gradle\caches\transforms-3\89eb40e51d9a03750fe3a25c96373511\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\Edward\.gradle\caches\transforms-3\89eb40e51d9a03750fe3a25c96373511\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:24:5-67
 	android:name
@@ -127,6 +131,8 @@ MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\Edward\.gradle\cac
 MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\Edward\.gradle\caches\transforms-3\0b825f9a3cd84cf1738e48fbfed11fea\transformed\jetified-react-native-0.70.6-debug\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.4] C:\Users\Edward\.gradle\caches\transforms-3\87826452408345e9fcde9828ee0fb34c\transformed\jetified-soloader-0.10.4\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.4] C:\Users\Edward\.gradle\caches\transforms-3\87826452408345e9fcde9828ee0fb34c\transformed\jetified-soloader-0.10.4\AndroidManifest.xml:11:5-20
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\Edward\.gradle\caches\transforms-3\9040f21d44789c233f6e942de90f3523\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\Edward\.gradle\caches\transforms-3\9040f21d44789c233f6e942de90f3523\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Edward\.gradle\caches\transforms-3\ff7f9e1ea9c2e709fffb9e018f2252cf\transformed\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Edward\.gradle\caches\transforms-3\ff7f9e1ea9c2e709fffb9e018f2252cf\transformed\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] C:\Users\Edward\.gradle\caches\transforms-3\46efb808426beeaac92ff8c136b6a113\transformed\jetified-okhttp3-integration-4.12.0\AndroidManifest.xml:10:5-14:19
@@ -219,6 +225,8 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\Edward
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\Edward\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [:react-native-config] G:\Kabar\client\node_modules\react-native-config\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-config] G:\Kabar\client\node_modules\react-native-config\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] G:\Kabar\client\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] G:\Kabar\client\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-device-info] G:\Kabar\client\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-device-info] G:\Kabar\client\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-encrypted-storage] G:\Kabar\client\node_modules\react-native-encrypted-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
@@ -273,6 +281,8 @@ MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] C:\Users\Edward\.g
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] C:\Users\Edward\.gradle\caches\transforms-3\72898a632139019e38bc9fa5121bc1f7\transformed\jetified-nativeimagetranscoder-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] C:\Users\Edward\.gradle\caches\transforms-3\1d1edd6ff4f1a69fd6c2a9b7b9361b66\transformed\jetified-imagepipeline-base-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] C:\Users\Edward\.gradle\caches\transforms-3\1d1edd6ff4f1a69fd6c2a9b7b9361b66\transformed\jetified-imagepipeline-base-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\Edward\.gradle\caches\transforms-3\9040f21d44789c233f6e942de90f3523\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\Edward\.gradle\caches\transforms-3\9040f21d44789c233f6e942de90f3523\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Edward\.gradle\caches\transforms-3\ff7f9e1ea9c2e709fffb9e018f2252cf\transformed\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Edward\.gradle\caches\transforms-3\ff7f9e1ea9c2e709fffb9e018f2252cf\transformed\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Edward\.gradle\caches\transforms-3\1b40e4574e76bff5831ef4bf4270480d\transformed\appcompat-1.4.1\AndroidManifest.xml:20:5-22:41

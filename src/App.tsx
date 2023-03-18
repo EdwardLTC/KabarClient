@@ -4,6 +4,7 @@ import React from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
+import { Loading } from '@components/common/Loading'
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
             insets: { top: 0, left: 0, right: 0, bottom: 0 },
           }}
         >
-          <RootNavigation></RootNavigation>
+          <Loading />
+          <RootNavigation />
         </SafeAreaProvider>
       </PersistGate>
     </Provider>

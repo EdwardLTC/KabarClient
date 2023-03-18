@@ -1,6 +1,6 @@
 // import { pokemonApi } from '@redux-setup/api';
-import {AuthReducer, counterReducer, ThemeReducer} from '@reduxs/reducers';
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import { AricleReducer, AuthReducer } from '@reduxs/reducers'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   persistStore,
   persistReducer,
@@ -10,19 +10,22 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-import EncryptedStorage from 'react-native-encrypted-storage';
-import {apiService} from '@reduxs/api/apiService';
+} from 'redux-persist'
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
+import EncryptedStorage from 'react-native-encrypted-storage'
+import { apiService } from '@reduxs/api/apiService'
+import { LoadingReducer } from '@reduxs/reducers/loadingReducer'
+import { ThemeReducer } from '@reduxs/reducers/themeReducer'
 
 const rootReducer = combineReducers({
   auth: AuthReducer,
-  counter: counterReducer,
   themeApp: ThemeReducer,
+  loading: LoadingReducer,
+  getArticles: AricleReducer,
   // ...other reducers here
-});
+})
 
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof rootReducer>
 
 const persistConfig = {
   key: 'root',
@@ -30,21 +33,21 @@ const persistConfig = {
   timeout: 30000,
   whitelist: ['counter'],
   stateReconciler: autoMergeLevel2,
-};
+}
 
-const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
+const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer)
 
 export const store = configureStore({
   reducer: {
     root: persistedReducer,
     [apiService.reducerPath]: apiService.reducer,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(apiService.middleware),
-});
+})
 
-export const persistor = persistStore(store);
+export const persistor = persistStore(store)

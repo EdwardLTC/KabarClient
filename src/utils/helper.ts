@@ -1,13 +1,14 @@
 // import I18n from 'i18n';
-import Toast from 'react-native-simple-toast';
+import { Dimensions } from 'react-native'
+import Toast from 'react-native-simple-toast'
 
 export const CustomToast = (value: string) => {
-    Toast.show(value);
-};
+  Toast.show(value)
+}
 
 export const CustomToastDev = () => {
-    // Toast.show(I18n.t('handleError.developing'));
-};
+  // Toast.show(I18n.t('handleError.developing'));
+}
 
 // export const convertCurrency = value => {
 //   if (value == null) {
@@ -93,3 +94,7 @@ export const CustomToastDev = () => {
 //     return checkOption1 && checkOption2 && checkOption3;
 //   });
 // };
+export const { width: widthScreen, height: heightScreen } =
+  Dimensions.get('screen')
+export const { width: widthWindow, height: heightWindow } =
+  Dimensions.get('window')

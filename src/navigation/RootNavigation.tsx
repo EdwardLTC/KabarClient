@@ -1,9 +1,11 @@
+import { useAppSelector } from '@hooks'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack'
+import { getStatusLogin } from '@reduxs'
 import { Login, Register } from '@screens/auth'
 import { ArticleDetail, Bookmark, Explore, Home, Profile } from '@screens/Main'
 import React, { FC } from 'react'
@@ -14,7 +16,6 @@ import { routes } from './utils'
 const Auth = createStackNavigator()
 const Main = createStackNavigator()
 const BottomTabs = createBottomTabNavigator()
-const isNotLogin = false
 
 const BottomTabsNavigation: FC<{}> = () => {
   return (
@@ -51,9 +52,10 @@ const BottomTabsNavigation: FC<{}> = () => {
 }
 
 export const RootNavigation = () => {
+  const enableLogin = useAppSelector(getStatusLogin)
   return (
     <NavigationContainer ref={navigationRef}>
-      {isNotLogin ? (
+      {enableLogin ? (
         <Auth.Navigator
           initialRouteName={routes.login}
           detachInactiveScreens={true}

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.fservice.app-mergeDebugResources-30:/values-uz/values-uz.xml",
+            "outputFile": "com.fservice.app-mergeDebugResources-31:/values-uz/values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Edward\\.gradle\\caches\\transforms-3\\37f8ffa3ec488a48f4844b49ea25bc5d\\transformed\\jetified-play-services-base-17.0.0\\res\\values-uz\\values.xml",

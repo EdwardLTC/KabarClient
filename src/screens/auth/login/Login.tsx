@@ -3,13 +3,17 @@ import React from 'react'
 import { makeStyles, useTheme } from '@themes'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
+import { useLoginMutation } from '@reduxs/api/authService'
+import { Config } from 'react-native-config'
 
 export const Login = () => {
   const styles = useStyles()
   const { colors } = useTheme()
+  console.log(Config)
+  const [email, setEmail] = React.useState<string>('nguyen@gmail.com')
+  const [password, setPassword] = React.useState<string>('1')
 
-  const [email, setEmail] = React.useState<string>('')
-  const [password, setPassword] = React.useState<string>('')
+  const [login] = useLoginMutation()
 
   const _renderHeader = () => {
     return (
@@ -68,7 +72,9 @@ export const Login = () => {
   const _renderButtonDoLogin = () => {
     return (
       <Button
-        onPress={() => {}}
+        onPress={() => {
+          login({ email, password })
+        }}
         title="Login"
         height={50}
         marginTop={28}

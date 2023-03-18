@@ -11,6 +11,8 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// lottie-react-native
+import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-config
 import com.lugg.RNCConfig.RNCConfigPackage;
 // react-native-device-info
@@ -76,6 +78,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new LottiePackage(),
       new RNCConfigPackage(),
       new RNDeviceInfo(),
       new RNEncryptedStoragePackage(),

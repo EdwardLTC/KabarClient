@@ -37,6 +37,7 @@
     "async-mutex": "^0.4.0",
     "lodash": "^4.17.21",
     "lodash.keys": "^4.2.0",
+    "lottie-react-native": "^5.1.5",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-config": "^1.5.0",
