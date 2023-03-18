@@ -3,6 +3,7 @@ import { useTheme, makeStyles } from '@themes'
 import React from 'react'
 import { goBack } from '@navigation/NavigationServices'
 import { images } from '@assets'
+import { ScrollView } from 'react-native-gesture-handler'
 
 export const ArticleDetail = () => {
   const { colors } = useTheme()
@@ -48,10 +49,59 @@ export const ArticleDetail = () => {
     )
   }
 
+  const _renderImage = () => {
+    return (
+      <Block marginTop={19}>
+        <Image source={images.placeholder} height={248} radius={6}></Image>
+      </Block>
+    )
+  }
+
+  const _renderDetail = () => {
+    return (
+      <Block marginTop={16}>
+        <Text
+          fontWeight="400"
+          size={13}
+          lineHeight={20}
+          color={colors.secondaryText}
+        >
+          Europe
+        </Text>
+        <Text
+          marginTop={4}
+          fontWeight="400"
+          size={24}
+          lineHeight={24}
+          color={colors.black}
+        >
+          Ukraine's President Zelensky to BBC: Blood money being paid for
+          Russian oil
+        </Text>
+
+        <Text marginTop={16}>
+          Ukrainian President Volodymyr Zelensky has accused European countries
+          that continue to buy Russian oil of "earning their money in other
+          people's blood". In an interview with the BBC, President Zelensky
+          singled out Germany and Hungary, accusing them of blocking efforts to
+          embargo energy sales, from which Russia stands to make up to £250bn
+          ($326bn) this year. There has been a growing frustration among
+          Ukraine's leadership with Berlin, which has backed some sanctions
+          against Russia but so far resisted calls to back tougher action on oil
+          sales.
+        </Text>
+      </Block>
+    )
+  }
+
   return (
     <Container style={styles.root}>
       <HeaderTools onBackPress={goBack}></HeaderTools>
       {_renderHeader()}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {_renderImage()}
+        {_renderDetail()}
+      </ScrollView>
     </Container>
   )
 }

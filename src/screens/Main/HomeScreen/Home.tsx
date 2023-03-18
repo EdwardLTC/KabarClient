@@ -1,12 +1,12 @@
 import { Block, Container, Text, ArticleComponent } from '@components'
 import { useTheme, makeStyles } from '@themes'
-import React from 'react'
+import React, { useRef } from 'react'
 import { BellIcon, LogoIcon } from '@assets/icons'
-import { FlatList } from 'react-native-gesture-handler'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Animated, ScrollView } from 'react-native'
 import { Article } from '@utils/types'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
+import { DinamicArticle } from '@components/common/DynamicArticle'
 
 const data: Article[] = Array.from({ length: 10 }).map(
   (_, index) =>
@@ -29,21 +29,35 @@ export const Home = () => {
   const { colors } = useTheme()
   const styles = useStyles()
 
+  let scrollOffsetY = useRef(new Animated.Value(0)).current
+
   const navigateToArticleDetail = () => {
     navigate(routes.articleDetail)
   }
+
   const _renderHeader = () => {
     return (
-      <Block row space="between">
+      <Block row space="between" marginBottom={16}>
         <LogoIcon></LogoIcon>
         <BellIcon></BellIcon>
       </Block>
     )
   }
 
+  const _renderDynamicArticle = () => {
+    return (
+      <TouchableOpacity onPress={navigateToArticleDetail}>
+        <DinamicArticle
+          animHeaderValue={scrollOffsetY}
+          article={data[0]}
+        ></DinamicArticle>
+      </TouchableOpacity>
+    )
+  }
+
   const _renderMenuTools = () => {
     return (
-      <Block row space="between" marginTop={32}>
+      <Block row space="between" marginBottom={16}>
         <Text color={colors.black} size={16} fontWeight={'600'} lineHeight={24}>
           Latest
         </Text>
@@ -59,30 +73,28 @@ export const Home = () => {
     )
   }
 
-  const _renderBody = () => {
-    return (
-      <Block flex>
-        <FlatList
-          data={data}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity onPress={navigateToArticleDetail}>
-                <ArticleComponent article={item}></ArticleComponent>
-              </TouchableOpacity>
-            )
-          }}
-          keyExtractor={(item) => item._id}
-          showsVerticalScrollIndicator={false}
-        ></FlatList>
-      </Block>
-    )
-  }
-
   return (
     <Container style={styles.root}>
       {_renderHeader()}
+      {_renderDynamicArticle()}
       {_renderMenuTools()}
-      {_renderBody()}
+      <ScrollView
+        style={{ backgroundColor: 'white' }}
+        scrollEventThrottle={16}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
+          { useNativeDriver: false },
+        )}
+        showsVerticalScrollIndicator={false}
+      >
+        {data.map((item) => {
+          return (
+            <TouchableOpacity onPress={navigateToArticleDetail} key={item._id}>
+              <ArticleComponent article={item}></ArticleComponent>
+            </TouchableOpacity>
+          )
+        })}
+      </ScrollView>
     </Container>
   )
 }
