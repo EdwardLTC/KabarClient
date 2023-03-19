@@ -1,7 +1,7 @@
 import { AuthState } from '@reduxs/types'
 import { apiService } from './apiService'
 import { EndPoint } from './endPoint'
-import { authInfo, hideLoading, showLoading } from '@reduxs/reducers'
+import { authInfo } from '@reduxs/reducers'
 
 export const authService = apiService.injectEndpoints({
   endpoints: (builder) => ({
@@ -13,16 +13,13 @@ export const authService = apiService.injectEndpoints({
           body: user,
         }
       },
-      transformResponse: (response: any) => response,
+      transformResponse: (response: any) => response.data,
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         try {
-          // dispatch(showLoading())
           const { data } = await queryFulfilled
+          // console.log('data', data.user)
           dispatch(authInfo(data))
-          // dispatch(hideLoading())
-        } catch (error) {
-          console.log('[Error] ', error)
-        }
+        } catch (error) {}
       },
     }),
   }),

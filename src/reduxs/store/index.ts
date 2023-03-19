@@ -16,6 +16,7 @@ import EncryptedStorage from 'react-native-encrypted-storage'
 import { apiService } from '@reduxs/api/apiService'
 import { LoadingReducer } from '@reduxs/reducers/loadingReducer'
 import { ThemeReducer } from '@reduxs/reducers/themeReducer'
+import { RootReducerName } from '@reduxs/reducers/type'
 
 const rootReducer = combineReducers({
   auth: AuthReducer,
@@ -31,7 +32,7 @@ const persistConfig = {
   key: 'root',
   storage: EncryptedStorage,
   timeout: 30000,
-  whitelist: ['counter'],
+  whitelist: [RootReducerName.auth],
   stateReconciler: autoMergeLevel2,
 }
 

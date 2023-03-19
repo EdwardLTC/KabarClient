@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.edward"
+3    package="com.fservice"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -102,7 +102,7 @@
 57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Edward\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 58            android:name="androidx.startup.InitializationProvider"
 58-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Edward\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-59            android:authorities="com.edward.androidx-startup"
+59            android:authorities="com.fservice.androidx-startup"
 59-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Edward\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
 60            android:exported="false" >
 60-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Edward\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37

@@ -682,7 +682,7 @@
   </plurals>
     <string name="APP_BUILD_CODE_ANDROID" translatable="false">"1"</string>
     <string name="APP_BUILD_CODE_IOS" translatable="false">"1"</string>
-    <string name="APP_ID_ANDROID" translatable="false">"com.edward"</string>
+    <string name="APP_ID_ANDROID" translatable="false">"com.fservice"</string>
     <string name="APP_ID_IOS" translatable="false">"com.ltc.edward"</string>
     <string name="APP_NAME" translatable="false">"Edward"</string>
     <string name="APP_VERSION" translatable="false">"1.0.0"</string>

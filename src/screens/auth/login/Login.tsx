@@ -4,12 +4,10 @@ import { makeStyles, useTheme } from '@themes'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
 import { useLoginMutation } from '@reduxs/api/authService'
-import { Config } from 'react-native-config'
 
 export const Login = () => {
   const styles = useStyles()
   const { colors } = useTheme()
-  console.log(Config)
   const [email, setEmail] = React.useState<string>('nguyen@gmail.com')
   const [password, setPassword] = React.useState<string>('1')
 
