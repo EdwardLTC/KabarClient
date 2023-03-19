@@ -12,18 +12,18 @@
     <!-- Value from default config. -->
     <string name="APP_BUILD_CODE_IOS" translatable="false">"1"</string>
     <!-- Value from default config. -->
-    <string name="APP_ID_ANDROID" translatable="false">"com.fservice"</string>
+    <string name="APP_ID_ANDROID" translatable="false">"com.edward"</string>
     <!-- Value from default config. -->
-    <string name="APP_ID_IOS" translatable="false">"com.fpoly.service"</string>
+    <string name="APP_ID_IOS" translatable="false">"com.ltc.edward"</string>
     <!-- Value from default config. -->
-    <string name="APP_NAME" translatable="false">"FService"</string>
+    <string name="APP_NAME" translatable="false">"Edward"</string>
     <!-- Value from default config. -->
     <string name="APP_VERSION" translatable="false">"1.0.0"</string>
     <!-- Value from default config. -->
-    <string name="BASE_URL" translatable="false">"https://urlserver.com"</string>
+    <string name="BASE_URL" translatable="false">"https://fpoly-hcm.herokuapp.com/api/"</string>
     <!-- Value from default config. -->
     <string name="ENV" translatable="false">"PRODCUTION"</string>
     <!-- Value from default config. -->
-    <string name="app_name" translatable="false">FService</string>
+    <string name="app_name" translatable="false">Edward</string>
 
 </resources>

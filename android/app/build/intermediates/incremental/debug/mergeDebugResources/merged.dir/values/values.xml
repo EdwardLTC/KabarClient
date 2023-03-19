@@ -682,11 +682,11 @@
   </plurals>
     <string name="APP_BUILD_CODE_ANDROID" translatable="false">"1"</string>
     <string name="APP_BUILD_CODE_IOS" translatable="false">"1"</string>
-    <string name="APP_ID_ANDROID" translatable="false">"com.fservice"</string>
-    <string name="APP_ID_IOS" translatable="false">"com.fpoly.service"</string>
-    <string name="APP_NAME" translatable="false">"FService"</string>
+    <string name="APP_ID_ANDROID" translatable="false">"com.edward"</string>
+    <string name="APP_ID_IOS" translatable="false">"com.ltc.edward"</string>
+    <string name="APP_NAME" translatable="false">"Edward"</string>
     <string name="APP_VERSION" translatable="false">"1.0.0"</string>
-    <string name="BASE_URL" translatable="false">"https://urlserver.com"</string>
+    <string name="BASE_URL" translatable="false">"https://fpoly-hcm.herokuapp.com/api/"</string>
     <string name="ENV" translatable="false">"PRODCUTION"</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
@@ -717,7 +717,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="alert_description" translatable="false">Alert</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
-    <string name="app_name" translatable="false">FService</string>
+    <string name="app_name" translatable="false">Edward</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="catalyst_change_bundle_location" project="catalyst" translatable="false">Change Bundle Location</string>
