@@ -122,7 +122,7 @@ dist
 # CocoaPods
 /ios/Pods/
 /android/app/build
-
+/android/.gradle
 # react-native-config codegen
 ios/tmp.xcconfig
 
