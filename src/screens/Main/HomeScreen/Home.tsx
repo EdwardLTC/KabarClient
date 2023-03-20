@@ -1,22 +1,39 @@
-import { Block, Container, Text, ArticleComponent } from '@components'
-import { useTheme, makeStyles } from '@themes'
+import {
+  Block,
+  Container,
+  Text,
+  ArticleComponent,
+  DinamicArticle,
+} from '@components'
+import { useTheme, makeStyles, normalize } from '@themes'
 import React, { useRef } from 'react'
 import { BellIcon, LogoIcon } from '@assets/icons'
 import { TouchableOpacity, Animated, ScrollView } from 'react-native'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
-import { DinamicArticle } from '@components/common/DynamicArticle'
 import { ArticleList } from '@reduxs'
 
-//en_US
 export const Home = () => {
   const { colors } = useTheme()
   const styles = useStyles()
+
+  const scrollViewRef = useRef<ScrollView>(null)
 
   let scrollOffsetY = useRef(new Animated.Value(0)).current
 
   const navigateToArticleDetail = () => {
     navigate(routes.articleDetail)
+  }
+
+  const gotoLatest = () => {
+    scrollViewRef.current?.scrollTo({
+      y: normalize.v(250),
+      animated: true,
+    })
+  }
+
+  const gotoTrending = () => {
+    navigate(routes.trending)
   }
 
   const _renderHeader = () => {
@@ -32,6 +49,7 @@ export const Home = () => {
     return (
       <TouchableOpacity onPress={navigateToArticleDetail}>
         <DinamicArticle
+          onPressTrending={gotoTrending}
           animHeaderValue={scrollOffsetY}
           article={ArticleList[0]}
         ></DinamicArticle>
@@ -45,14 +63,16 @@ export const Home = () => {
         <Text color={colors.black} size={16} fontWeight={'600'} lineHeight={24}>
           Latest
         </Text>
-        <Text
-          color={colors.secondaryText}
-          size={14}
-          fontWeight="400"
-          lineHeight={21}
-        >
-          See all
-        </Text>
+        <TouchableOpacity onPress={gotoLatest}>
+          <Text
+            color={colors.secondaryText}
+            size={14}
+            fontWeight="400"
+            lineHeight={21}
+          >
+            See all
+          </Text>
+        </TouchableOpacity>
       </Block>
     )
   }
@@ -63,13 +83,14 @@ export const Home = () => {
       {_renderDynamicArticle()}
       {_renderMenuTools()}
       <ScrollView
+        ref={scrollViewRef}
         style={{ backgroundColor: 'white' }}
         scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
           { useNativeDriver: false },
         )}
-        showsVerticalScrollIndicator={false}
       >
         {ArticleList.map((item) => {
           return (

@@ -5,10 +5,17 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack'
-import { getStatusLogin, getToken, getUserInfo } from '@reduxs'
+import { getStatusLogin } from '@reduxs'
 import { Login, Register } from '@screens/auth'
-import { ArticleDetail, Bookmark, Explore, Home, Profile } from '@screens/Main'
-import React, { FC, useEffect } from 'react'
+import {
+  ArticleDetail,
+  Bookmark,
+  Explore,
+  Home,
+  Profile,
+  Trending,
+} from '@screens/Main'
+import React, { FC } from 'react'
 import { BottomBar } from './components'
 import { navigationRef } from './NavigationServices'
 import { routes } from './utils'
@@ -53,8 +60,6 @@ const BottomTabsNavigation: FC<{}> = () => {
 
 export const RootNavigation = () => {
   const enableLogin = useAppSelector(getStatusLogin)
-
-
   return (
     <NavigationContainer ref={navigationRef}>
       {enableLogin ? (
@@ -80,6 +85,7 @@ export const RootNavigation = () => {
         >
           <Main.Screen name={routes.main} component={BottomTabsNavigation} />
           <Main.Screen name={routes.articleDetail} component={ArticleDetail} />
+          <Main.Screen name={routes.trending} component={Trending} />
         </Main.Navigator>
       )}
     </NavigationContainer>

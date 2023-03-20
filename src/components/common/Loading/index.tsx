@@ -8,7 +8,6 @@ import React from 'react'
 
 export const Loading = () => {
   const isShow = useAppSelector(enableLoading)
-  const { colors } = useTheme()
 
   if (!isShow) {
     return <Block />
@@ -19,7 +18,6 @@ export const Loading = () => {
       absolute
       zIndex={9999}
       flex
-      backgroundColor={colors.background}
       width={widthScreen}
       height={heightScreen}
       justifyCenter

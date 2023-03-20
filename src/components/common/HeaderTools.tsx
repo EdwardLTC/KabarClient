@@ -11,11 +11,11 @@ type HeaderProps = {
 export const HeaderTools: FC<HeaderProps> = (props) => {
   const { onBackPress, onToolsPress, title } = props
   return (
-    <Block row space="between">
+    <Block row space="between" paddingHorizontal={4}>
       <TouchableOpacity onPress={onBackPress}>
         <BackArrowIcon></BackArrowIcon>
       </TouchableOpacity>
-      <Text fontWeight="400" size={14} lineHeight={24}>
+      <Text fontWeight="600" size={16} lineHeight={24} fontFamily="bold">
         {title}
       </Text>
       <TouchableOpacity onPress={onToolsPress}>

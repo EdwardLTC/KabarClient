@@ -1,2 +1,3 @@
-export * from './Home';
-export * from './ArticleDetail';
+export * from './Home'
+export * from './ArticleDetailScreen'
+export * from './TrendingScreen'
