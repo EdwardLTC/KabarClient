@@ -1,11 +1,19 @@
-import { Container, Text } from '@components'
+import { ArticleComponent, Container, Text } from '@components'
+import { routes } from '@navigation'
+import { navigate } from '@navigation/NavigationServices'
+import { ArticleList } from '@reduxs'
 import { makeStyles, useTheme } from '@themes'
 import React from 'react'
-import { FlatList } from 'react-native-gesture-handler'
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 
 export const Bookmark = () => {
   const { colors } = useTheme()
   const styles = useStyles()
+
+  const navigateToArticleDetail = () => {
+    navigate(routes.articleDetail)
+  }
+
   return (
     <Container style={styles.root}>
       <Text
@@ -15,9 +23,19 @@ export const Bookmark = () => {
         color={colors.black}
         marginBottom={16}
       >
-        Explore
+        Bookmark
       </Text>
-      <FlatList data={undefined} renderItem={undefined}></FlatList>
+      <FlatList
+        data={ArticleList}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity onPress={navigateToArticleDetail}>
+              <ArticleComponent article={item}></ArticleComponent>
+            </TouchableOpacity>
+          )
+        }}
+      ></FlatList>
     </Container>
   )
 }

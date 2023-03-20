@@ -4,22 +4,30 @@ import React, { FC } from 'react'
 import { TouchableOpacity } from 'react-native'
 
 type HeaderProps = {
+  disabledLeftIcon?: boolean
+  renderRightIcon?: React.ReactNode
   onBackPress?: () => void
   onToolsPress?: () => void
   title?: string
 }
 export const HeaderTools: FC<HeaderProps> = (props) => {
-  const { onBackPress, onToolsPress, title } = props
+  const {
+    onBackPress,
+    onToolsPress,
+    title,
+    disabledLeftIcon,
+    renderRightIcon,
+  } = props
   return (
     <Block row space="between" paddingHorizontal={4}>
       <TouchableOpacity onPress={onBackPress}>
-        <BackArrowIcon></BackArrowIcon>
+        {disabledLeftIcon ? null : <BackArrowIcon></BackArrowIcon>}
       </TouchableOpacity>
-      <Text fontWeight="600" size={16} lineHeight={24} fontFamily="bold">
+      <Text fontWeight="600" size={16} lineHeight={24} fontFamily="regular">
         {title}
       </Text>
       <TouchableOpacity onPress={onToolsPress}>
-        <ToolsIcon></ToolsIcon>
+        {renderRightIcon ? renderRightIcon : <ToolsIcon></ToolsIcon>}
       </TouchableOpacity>
     </Block>
   )

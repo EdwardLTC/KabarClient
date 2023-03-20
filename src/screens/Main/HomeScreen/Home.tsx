@@ -7,7 +7,7 @@ import {
 } from '@components'
 import { useTheme, makeStyles, normalize } from '@themes'
 import React, { useRef } from 'react'
-import { BellIcon, LogoIcon } from '@assets/icons'
+import { GlassIcon, LogoIcon } from '@assets/icons'
 import { TouchableOpacity, Animated, ScrollView } from 'react-native'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
@@ -38,9 +38,11 @@ export const Home = () => {
 
   const _renderHeader = () => {
     return (
-      <Block row space="between" marginBottom={16}>
+      <Block row space="between" marginBottom={16} alignCenter>
         <LogoIcon></LogoIcon>
-        <BellIcon></BellIcon>
+        <TouchableOpacity>
+          <GlassIcon></GlassIcon>
+        </TouchableOpacity>
       </Block>
     )
   }
@@ -59,7 +61,12 @@ export const Home = () => {
 
   const _renderMenuTools = () => {
     return (
-      <Block row space="between" marginBottom={16}>
+      <Block
+        row
+        space="between"
+        backgroundColor={colors.background}
+        marginBottom={16}
+      >
         <Text color={colors.black} size={16} fontWeight={'600'} lineHeight={24}>
           Latest
         </Text>
@@ -81,25 +88,30 @@ export const Home = () => {
     <Container style={styles.root}>
       {_renderHeader()}
       {_renderDynamicArticle()}
-      {_renderMenuTools()}
-      <ScrollView
-        ref={scrollViewRef}
-        style={{ backgroundColor: 'white' }}
-        scrollEventThrottle={16}
-        showsVerticalScrollIndicator={false}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
-          { useNativeDriver: false },
-        )}
-      >
-        {ArticleList.map((item) => {
-          return (
-            <TouchableOpacity onPress={navigateToArticleDetail} key={item._id}>
-              <ArticleComponent article={item}></ArticleComponent>
-            </TouchableOpacity>
-          )
-        })}
-      </ScrollView>
+      <Block backgroundColor={colors.background}>
+        {_renderMenuTools()}
+        <ScrollView
+          ref={scrollViewRef}
+          style={{ backgroundColor: colors.background }}
+          scrollEventThrottle={16}
+          showsVerticalScrollIndicator={false}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
+            { useNativeDriver: false },
+          )}
+        >
+          {ArticleList.map((item) => {
+            return (
+              <TouchableOpacity
+                onPress={navigateToArticleDetail}
+                key={item._id}
+              >
+                <ArticleComponent article={item}></ArticleComponent>
+              </TouchableOpacity>
+            )
+          })}
+        </ScrollView>
+      </Block>
     </Container>
   )
 }

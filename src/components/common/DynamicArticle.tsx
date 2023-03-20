@@ -1,8 +1,9 @@
-import { Block, Text } from '@components/base'
+import { Block, Text, Image } from '@components/base'
 import React, { FC } from 'react'
 import { normalize, useTheme } from '@themes'
 import { Article } from '@utils/types'
-import { Animated, Image, TouchableOpacity } from 'react-native'
+import { Animated, TouchableOpacity } from 'react-native'
+import { images } from '@assets'
 
 type ArticleComponentProps = {
   article?: Article
@@ -22,6 +23,7 @@ export const DinamicArticle: FC<ArticleComponentProps> = (props) => {
     outputRange: [Header_Max_Height, Header_Min_Height],
     extrapolate: 'clamp',
   })
+
   const _renderMenuTools = () => {
     return (
       <Block row space="between" marginBottom={16}>
@@ -46,7 +48,9 @@ export const DinamicArticle: FC<ArticleComponentProps> = (props) => {
       <Block marginBottom={24} width={'100%'} flex radius={6}>
         {_renderMenuTools()}
         <Image
-          style={{ width: '100%', height: '65%', borderRadius: 6 }}
+          resizeMode="cover"
+          height={183}
+          width={'100%'}
           source={{ uri: article?.image }}
         ></Image>
         <Block>
@@ -68,15 +72,23 @@ export const DinamicArticle: FC<ArticleComponentProps> = (props) => {
           >
             {article?.title}
           </Text>
-
-          <Text
-            fontWeight="600"
-            color={colors.secondaryText}
-            size={13}
-            marginTop={4}
-          >
-            BBC News
-          </Text>
+          <Block row>
+            <Image
+              source={images.placeholder}
+              width={20}
+              height={20}
+              radius={10}
+            ></Image>
+            <Text
+              marginLeft={4}
+              fontWeight="600"
+              color={colors.secondaryText}
+              size={13}
+              lineHeight={20}
+            >
+              BBC News
+            </Text>
+          </Block>
         </Block>
       </Block>
     )
