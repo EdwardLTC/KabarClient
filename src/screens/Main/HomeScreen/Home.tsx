@@ -3,7 +3,7 @@ import {
   Container,
   Text,
   ArticleComponent,
-  DinamicArticle,
+  DynamicArticle,
 } from '@components'
 import { useTheme, makeStyles, normalize } from '@themes'
 import React, { useRef } from 'react'
@@ -13,6 +13,9 @@ import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
 import { ArticleList } from '@reduxs'
 
+const Header_Max_Height = normalize.v(260)
+const Header_Min_Height = 0
+
 export const Home = () => {
   const { colors } = useTheme()
   const styles = useStyles()
@@ -20,6 +23,12 @@ export const Home = () => {
   const scrollViewRef = useRef<ScrollView>(null)
 
   let scrollOffsetY = useRef(new Animated.Value(0)).current
+
+  const animateHeaderHeight = scrollOffsetY.interpolate({
+    inputRange: [0, Header_Max_Height - Header_Min_Height],
+    outputRange: [Header_Max_Height, Header_Min_Height],
+    extrapolate: 'clamp',
+  })
 
   const navigateToArticleDetail = () => {
     navigate(routes.articleDetail)
@@ -50,11 +59,18 @@ export const Home = () => {
   const _renderDynamicArticle = () => {
     return (
       <TouchableOpacity onPress={navigateToArticleDetail}>
-        <DinamicArticle
-          onPressTrending={gotoTrending}
-          animHeaderValue={scrollOffsetY}
-          article={ArticleList[0]}
-        ></DinamicArticle>
+        <Animated.View
+          style={[
+            {
+              height: animateHeaderHeight,
+            },
+          ]}
+        >
+          <DynamicArticle
+            article={ArticleList[0]}
+            onPressTrending={gotoTrending}
+          ></DynamicArticle>
+        </Animated.View>
       </TouchableOpacity>
     )
   }
@@ -88,11 +104,11 @@ export const Home = () => {
     <Container style={styles.root}>
       {_renderHeader()}
       {_renderDynamicArticle()}
-      <Block backgroundColor={colors.background}>
+      <Block backgroundColor={colors.background} flex>
         {_renderMenuTools()}
         <ScrollView
           ref={scrollViewRef}
-          style={{ backgroundColor: colors.background }}
+          style={{ backgroundColor: colors.background, height: '100%' }}
           scrollEventThrottle={16}
           showsVerticalScrollIndicator={false}
           onScroll={Animated.event(

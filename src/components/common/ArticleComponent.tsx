@@ -14,6 +14,7 @@ export const ArticleComponent: FC<ArticleComponentProps> = (props) => {
   return (
     <Block row padding={8} marginBottom={16}>
       <Image
+        resizeMode="cover"
         source={{ uri: article?.image }}
         width={96}
         height={96}

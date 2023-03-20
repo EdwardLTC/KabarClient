@@ -1,4 +1,4 @@
 export const images = {
-    placeholder: require('./react.jpg'),
-    logo: require('./logo.png'),
-};
+  placeholder: require('./Portrait_Placeholder.png'),
+  logo: require('./logo.png'),
+}
