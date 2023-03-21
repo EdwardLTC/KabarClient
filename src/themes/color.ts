@@ -20,6 +20,7 @@ export const colors = {
     // add color below....
     // bottom menu
     bottomMenu: '#f4f5f2',
+    transparent: 'rgba(0, 0, 0, 0.4)',
   },
   light: {
     //default don't delete
@@ -43,6 +44,7 @@ export const colors = {
     // add color below...
     // bottom menu
     bottomMenu: '#f4f5f2',
+    transparent: 'rgba(0, 0, 0, 0.4)',
   },
 }
 
@@ -65,5 +67,6 @@ export type Color =
   | 'black'
   | 'blue'
   | 'bottomMenu'
+  | 'transparent'
 
 export type ThemeColor = typeof colors

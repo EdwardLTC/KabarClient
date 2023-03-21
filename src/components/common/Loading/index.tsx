@@ -1,4 +1,4 @@
-import { Block, Text } from '@components'
+import { Block, StatusBar, Text } from '@components'
 import { useAppSelector } from '@hooks/useRedux'
 import { enableLoading } from '@reduxs/selectors'
 import { normalize, useTheme } from '@themes'
@@ -8,6 +8,7 @@ import React from 'react'
 
 export const Loading = () => {
   const isShow = useAppSelector(enableLoading)
+  const { colors } = useTheme()
 
   if (!isShow) {
     return <Block />
@@ -16,6 +17,7 @@ export const Loading = () => {
   return (
     <Block
       absolute
+      backgroundColor={colors.transparent}
       zIndex={9999}
       flex
       width={widthScreen}
@@ -23,6 +25,7 @@ export const Loading = () => {
       justifyCenter
       alignCenter
     >
+      <StatusBar statusColor={colors.transparent}></StatusBar>
       <AnimatedLottieView
         source={require('./Paperplane.json')}
         autoPlay
