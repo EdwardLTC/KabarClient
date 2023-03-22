@@ -1,5 +1,5 @@
 // import { pokemonApi } from '@redux-setup/api';
-import { AricleReducer, AuthReducer } from '@reduxs/reducers'
+import { AricleReducer, AuthReducer, CommonReducer } from '@reduxs/reducers'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   persistStore,
@@ -19,10 +19,11 @@ import { ThemeReducer } from '@reduxs/reducers/themeReducer'
 import { RootReducerName } from '@reduxs/reducers/type'
 
 const rootReducer = combineReducers({
-  auth: AuthReducer,
+  [RootReducerName.auth]: AuthReducer,
   themeApp: ThemeReducer,
-  loading: LoadingReducer,
-  getArticles: AricleReducer,
+  [RootReducerName.loading]: LoadingReducer,
+  [RootReducerName.common]: CommonReducer,
+  [RootReducerName.articles]: AricleReducer,
   // ...other reducers here
 })
 

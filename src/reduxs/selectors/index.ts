@@ -43,3 +43,4 @@ export const TopicList: Topic[] = [
 export * from './authSelector'
 export * from './loadingSelector'
 export * from './articlesSelector'
+export * from './commonSelector'

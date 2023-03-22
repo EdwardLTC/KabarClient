@@ -9,7 +9,7 @@ import {
   FetchBaseQueryMeta,
   retry,
 } from '@reduxjs/toolkit/query/react'
-import { hideLoading, showLoading } from '@reduxs/reducers'
+import { hideLoading, showAlert, showLoading } from '@reduxs/reducers'
 import { Mutex } from 'async-mutex'
 import Config from 'react-native-config'
 
@@ -26,15 +26,15 @@ const handleError = (
   },
   api: BaseQueryApi,
 ) => {
-  // api.dispatch(
-  //   showAlert({
-  //     id: 'handleErrorDefault_alert',
-  //     title: `OOP ${responseError?.error.status}`,
-  //     message: 'Lỗi hệ thống vui lòng quay lại sau.',
-  //     okText: 'Đóng',
-  //     options: { cancelable: true },
-  //   }),
-  // )
+  api.dispatch(
+    showAlert({
+      id: 'handleErrorDefault_alert',
+      title: `OOP ${responseError?.error.status}`,
+      message: 'Lỗi hệ thống vui lòng quay lại sau.',
+      okText: 'Đóng',
+      options: { cancelable: true },
+    }),
+  )
 }
 
 const baseQuery = retry(
@@ -104,12 +104,11 @@ const baseQueryWithReauth: BaseQueryFn<
       result = await baseQuery(args, api, extraOptions)
     }
   } else {
-    // wait until the mutex is available without locking it
-    await mutex.waitForUnlock()
-    result = await baseQuery(args, api, extraOptions)
+    handleError(result, api)
   }
 
   api.dispatch(hideLoading())
+
   // custom response data ex: result.data
   return result
 }
