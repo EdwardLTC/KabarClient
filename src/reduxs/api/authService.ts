@@ -1,7 +1,7 @@
 import { AuthState } from '@reduxs/types'
 import { apiService } from './apiService'
 import { EndPoint } from './endPoint'
-import { authInfo } from '@reduxs/reducers'
+import { authInfo, removeAuthInfo } from '@reduxs/reducers'
 
 export const authService = apiService.injectEndpoints({
   endpoints: (builder) => ({
@@ -21,6 +21,18 @@ export const authService = apiService.injectEndpoints({
         } catch (error) {}
       },
     }),
+
+    logout: builder.mutation<any, void>({
+      query: () => EndPoint.logout,
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled
+          if (data.statusCode === 200) {
+            dispatch(removeAuthInfo())
+          }
+        } catch (error) {}
+      },
+    }),
   }),
 })
 
@@ -33,4 +45,4 @@ export const authService = apiService.injectEndpoints({
 - When you call this func service, it only run first time, component start.
 */
 
-export const { useLoginMutation } = authService
+export const { useLoginMutation, useLogoutMutation } = authService

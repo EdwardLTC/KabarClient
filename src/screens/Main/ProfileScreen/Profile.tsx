@@ -9,6 +9,8 @@ import {
   Text,
 } from '@components'
 import { useAppSelector } from '@hooks'
+import { routes } from '@navigation'
+import { navigate } from '@navigation/NavigationServices'
 import { ArticleList, getUserInfo } from '@reduxs'
 import { UserInfo } from '@reduxs/types'
 import { makeStyles, useTheme } from '@themes'
@@ -19,6 +21,10 @@ export const Profile = () => {
   const { colors } = useTheme()
   const styles = useStyles()
   const userInfo: UserInfo = useAppSelector(getUserInfo)
+
+  const navigateToSetting = () => {
+    navigate(routes.setting)
+  }
 
   const doOpenWebsite = () => {
     Linking.openURL('https://edwardltc.github.io/Profile.github.io/')
@@ -121,6 +127,7 @@ export const Profile = () => {
         title="Profile"
         disabledLeftIcon={true}
         renderRightIcon={<SettingIcon></SettingIcon>}
+        onToolsPress={navigateToSetting}
       ></HeaderTools>
       {_renderMyArticles()}
     </Container>

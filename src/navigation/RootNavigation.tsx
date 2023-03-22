@@ -15,6 +15,7 @@ import {
   Profile,
   Trending,
 } from '@screens/Main'
+import SettingProfile from '@screens/Main/ProfileScreen/SettingProfile'
 import React, { FC } from 'react'
 import { BottomBar } from './components'
 import { navigationRef } from './NavigationServices'
@@ -86,6 +87,7 @@ export const RootNavigation = () => {
           <Main.Screen name={routes.main} component={BottomTabsNavigation} />
           <Main.Screen name={routes.articleDetail} component={ArticleDetail} />
           <Main.Screen name={routes.trending} component={Trending} />
+          <Main.Screen name={routes.setting} component={SettingProfile} />
         </Main.Navigator>
       )}
     </NavigationContainer>

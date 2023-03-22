@@ -5,6 +5,7 @@ import { TouchableOpacity } from 'react-native'
 
 type HeaderProps = {
   disabledLeftIcon?: boolean
+  disabledRightIcon?: boolean
   renderRightIcon?: React.ReactNode
   onBackPress?: () => void
   onToolsPress?: () => void
@@ -17,6 +18,7 @@ export const HeaderTools: FC<HeaderProps> = (props) => {
     title,
     disabledLeftIcon,
     renderRightIcon,
+    disabledRightIcon,
   } = props
   return (
     <Block row space="between" paddingHorizontal={4}>
@@ -27,7 +29,11 @@ export const HeaderTools: FC<HeaderProps> = (props) => {
         {title}
       </Text>
       <TouchableOpacity onPress={onToolsPress}>
-        {renderRightIcon ? renderRightIcon : <ToolsIcon></ToolsIcon>}
+        {disabledRightIcon ? null : renderRightIcon ? (
+          renderRightIcon
+        ) : (
+          <ToolsIcon></ToolsIcon>
+        )}
       </TouchableOpacity>
     </Block>
   )

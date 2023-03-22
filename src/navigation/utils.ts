@@ -11,4 +11,5 @@ export const routes = {
     //child screen
     articleDetail: 'ARTICLE_DETAIL',
     trending: 'TRENDING',
+    setting: 'SETTING',
 };
