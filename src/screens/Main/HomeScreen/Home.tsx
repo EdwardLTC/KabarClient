@@ -23,7 +23,6 @@ export const Home = () => {
   const styles = useStyles()
   const [getArticles] = useLazyGetArticlesQuery()
   const listArticles = useAppSelector(ListArticles)
-  console.log('listArticles', listArticles)
   useEffect(() => {
     getArticles()
   }, [])

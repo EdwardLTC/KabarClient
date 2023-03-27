@@ -1,11 +1,11 @@
 import { articleList } from '@reduxs/reducers'
-import { ListArticleResponse } from '@reduxs/types/articleType'
+import { ArticleState, ListArticleResponse } from '@reduxs/types/articleType'
 import { apiService } from './apiService'
 import { EndPoint } from './endPoint'
 
 export const articlesService = apiService.injectEndpoints({
   endpoints: (builder) => ({
-    getArticles: builder.query<ListArticleResponse, void>({
+    getArticles: builder.query<ArticleState, void>({
       query: () => EndPoint.listArticle,
       transformResponse: (response: ListArticleResponse) => {
         return response

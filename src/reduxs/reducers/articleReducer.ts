@@ -1,22 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ListArticleResponse } from '@reduxs/types/articleType'
+import { ArticleState } from '@reduxs/types/articleType'
 import { RootReducerName } from './type'
 
-const defaultArticleState: ListArticleResponse = {
+const defaultArticleState: ArticleState = {
   data: [],
-  error: false,
-  responseTimestamp: '',
-  statusCode: 0
 }
 const articleSlice = createSlice({
   name: RootReducerName.articles,
   initialState: defaultArticleState,
   reducers: {
-    articleList(state: ListArticleResponse, action: PayloadAction<ListArticleResponse>) {
+    articleList(state: ArticleState, action: PayloadAction<ArticleState>) {
       state.data = action.payload.data
-      state.error = action.payload.error
-      state.responseTimestamp = action.payload.responseTimestamp
-      state.statusCode = action.payload.statusCode
     },
   },
 })

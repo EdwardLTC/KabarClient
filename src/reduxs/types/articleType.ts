@@ -5,6 +5,9 @@ export interface ListArticleResponse {
   data: Article[]
 }
 
+export interface ArticleState {
+  data: Article[]
+}
 export interface Article {
   _id: string
   title: string

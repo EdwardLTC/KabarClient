@@ -1,6 +1,6 @@
 import { RootReducerName } from '@reduxs/reducers/type'
-import { ListArticleResponse } from '@reduxs/types/articleType'
+import { ArticleState } from '@reduxs/types/articleType'
 
 export const ListArticles = (state: {
-  root: { [RootReducerName.articles]: ListArticleResponse }
+  root: { [RootReducerName.articles]: ArticleState }
 }) => state.root[RootReducerName.articles].data
