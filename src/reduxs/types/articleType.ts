@@ -1,15 +1,21 @@
-export interface ResponseGetArticles {
-  
+export interface ListArticleResponse {
+  error: boolean
+  responseTimestamp: string
+  statusCode: number
+  data: Article[]
 }
 
-export type Article = {
+export interface Article {
   _id: string
   title: string
   content: string
   image: string
+  createdAt: string
+  createdBy: CreatedBy
 }
 
-export type ArticleState = {
-  statusCode: number
-  articles: Article[]
+export interface CreatedBy {
+  _id: string
+  name: string
+  avatar: string
 }

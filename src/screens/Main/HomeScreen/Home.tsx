@@ -6,12 +6,14 @@ import {
   DynamicArticle,
 } from '@components'
 import { useTheme, makeStyles, normalize } from '@themes'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { GlassIcon, LogoIcon } from '@assets/icons'
 import { TouchableOpacity, Animated, ScrollView } from 'react-native'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
-import { ArticleList } from '@reduxs'
+import { ListArticles } from '@reduxs'
+import { useLazyGetArticlesQuery } from '@reduxs/api/articlesService'
+import { useAppSelector } from '@hooks'
 
 const Header_Max_Height = normalize.v(260)
 const Header_Min_Height = 0
@@ -19,6 +21,12 @@ const Header_Min_Height = 0
 export const Home = () => {
   const { colors } = useTheme()
   const styles = useStyles()
+  const [getArticles] = useLazyGetArticlesQuery()
+  const listArticles = useAppSelector(ListArticles)
+  console.log('listArticles', listArticles)
+  useEffect(() => {
+    getArticles()
+  }, [])
 
   const scrollViewRef = useRef<ScrollView>(null)
 
@@ -67,7 +75,7 @@ export const Home = () => {
           ]}
         >
           <DynamicArticle
-            article={ArticleList[0]}
+            article={listArticles[0]}
             onPressTrending={gotoTrending}
           ></DynamicArticle>
         </Animated.View>
@@ -116,7 +124,7 @@ export const Home = () => {
             { useNativeDriver: false },
           )}
         >
-          {ArticleList.map((item) => {
+          {listArticles.map((item) => {
             return (
               <TouchableOpacity
                 onPress={navigateToArticleDetail}

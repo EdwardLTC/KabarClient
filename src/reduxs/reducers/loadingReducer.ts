@@ -11,11 +11,9 @@ const loadingSlice = createSlice({
   initialState: defaultAuthState,
   reducers: {
     showLoading(state: LoadingType) {
-      console.log('SHOW LOADING')
       state.enableLoading = true
     },
     hideLoading(state: LoadingType) {
-      console.log('DISMISS LOADING')
       state.enableLoading = false
     },
   },
