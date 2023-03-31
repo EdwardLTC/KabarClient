@@ -31,15 +31,14 @@ export const Home = () => {
   const scrollViewRef = useRef<ScrollView>(null)
 
   let scrollOffsetY = useRef(new Animated.Value(0)).current
-
   const animateHeaderHeight = scrollOffsetY.interpolate({
     inputRange: [0, Header_Max_Height - Header_Min_Height],
     outputRange: [Header_Max_Height, Header_Min_Height],
     extrapolate: 'clamp',
   })
 
-  const navigateToArticleDetail = () => {
-    navigate(routes.articleDetail)
+  const navigateToArticleDetail = (idArticle: string) => {
+    navigate(routes.articleDetail, { id: idArticle }, 'ArticleDetail')
   }
 
   const gotoLatest = () => {
@@ -66,7 +65,9 @@ export const Home = () => {
 
   const _renderDynamicArticle = () => {
     return (
-      <TouchableOpacity onPress={navigateToArticleDetail}>
+      <TouchableOpacity
+        onPress={() => navigateToArticleDetail(listArticles[0]._id)}
+      >
         <Animated.View
           style={[
             {
@@ -127,7 +128,7 @@ export const Home = () => {
           {listArticles.map((item) => {
             return (
               <TouchableOpacity
-                onPress={navigateToArticleDetail}
+                onPress={() => navigateToArticleDetail(item._id)}
                 key={item._id}
               >
                 <ArticleComponent article={item}></ArticleComponent>

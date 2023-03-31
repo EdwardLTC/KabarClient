@@ -13,8 +13,9 @@ export const ArticleComponentBig: FC<ArticleComponentProps> = (props) => {
   const { article } = props
 
   return (
-    <Block marginBottom={16} alignCenter justifyCenter>
+    <Block marginBottom={16} justifyCenter>
       <Image
+        resizeMode="cover"
         radius={6}
         width={'100%'}
         height={183}

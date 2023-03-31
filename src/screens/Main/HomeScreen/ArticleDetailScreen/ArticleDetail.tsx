@@ -1,14 +1,28 @@
 import { Block, Container, HeaderTools, Image, Button, Text } from '@components'
 import { useTheme, makeStyles } from '@themes'
-import React from 'react'
+import React, { FC, useEffect } from 'react'
 import { goBack } from '@navigation/NavigationServices'
 import { images } from '@assets'
 import { ScrollView } from 'react-native-gesture-handler'
+import { useLazyGetArticleDetailQuery } from '@reduxs/api/articlesService'
+import { Route } from 'react-native'
+import { Article } from '@utils/types'
 
-export const ArticleDetail = () => {
+export const ArticleDetail = (props: Route) => {
   const { colors } = useTheme()
   const styles = useStyles()
+  const [article, setArticle] = React.useState<Article>()
+  const [getDetailsArticle] = useLazyGetArticleDetailQuery()
+  const { id } = props.route.params
 
+  useEffect(() => {
+    fetchData()
+  }, [id])
+
+  const fetchData = async () => {
+    const res = await getDetailsArticle(id)
+    setArticle(res.data)
+  }
   const _renderHeader = () => {
     return (
       <Block row space="between" marginTop={20} alignCenter>
@@ -52,7 +66,7 @@ export const ArticleDetail = () => {
   const _renderImage = () => {
     return (
       <Block marginTop={19}>
-        <Image source={images.placeholder} height={248} radius={6}></Image>
+        <Image source={{ uri: article?.image }} height={248} radius={6}></Image>
       </Block>
     )
   }
@@ -75,21 +89,10 @@ export const ArticleDetail = () => {
           lineHeight={24}
           color={colors.black}
         >
-          Ukraine's President Zelensky to BBC: Blood money being paid for
-          Russian oil
+          {article?.title}
         </Text>
 
-        <Text marginTop={16}>
-          Ukrainian President Volodymyr Zelensky has accused European countries
-          that continue to buy Russian oil of "earning their money in other
-          people's blood". In an interview with the BBC, President Zelensky
-          singled out Germany and Hungary, accusing them of blocking efforts to
-          embargo energy sales, from which Russia stands to make up to £250bn
-          ($326bn) this year. There has been a growing frustration among
-          Ukraine's leadership with Berlin, which has backed some sanctions
-          against Russia but so far resisted calls to back tougher action on oil
-          sales.
-        </Text>
+        <Text marginTop={16}>{article?.content}</Text>
       </Block>
     )
   }

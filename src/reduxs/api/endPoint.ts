@@ -13,5 +13,5 @@ export enum EndPoint {
   myArticle = 'articles/my-articles',
   searchArticle = 'articles/search?/title=',
   createArticle = 'articles',
-
+  articleDetails = 'articles/',
 }

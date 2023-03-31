@@ -1,5 +1,6 @@
 import { articleList } from '@reduxs/reducers'
 import { ArticleState, ListArticleResponse } from '@reduxs/types/articleType'
+import { Article } from '@utils/types'
 import { apiService } from './apiService'
 import { EndPoint } from './endPoint'
 
@@ -17,7 +18,15 @@ export const articlesService = apiService.injectEndpoints({
         } catch (error) {}
       },
     }),
+
+    getArticleDetail: builder.query<Article, string>({
+      query: (id) => EndPoint.articleDetails + id + '/detail',
+      transformResponse: (response: ListArticleResponse) => {
+        console.log(response)
+        return response.data[0]
+      },
+    }),
   }),
 })
 
-export const { useLazyGetArticlesQuery } = articlesService
+export const { useLazyGetArticlesQuery, useLazyGetArticleDetailQuery} = articlesService
