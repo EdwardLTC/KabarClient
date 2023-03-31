@@ -18,8 +18,8 @@ export const Explore = () => {
   const styles = useStyles()
   const { colors } = useTheme()
 
-  const navigateToArticleDetail = () => {
-    navigate(routes.articleDetail)
+  const navigateToArticleDetail = (idArticle: string) => {
+    navigate(routes.articleDetail, { id: idArticle }, 'ArticleDetail')
   }
 
   const listArticles: Article[] = useAppSelector(ListArticles)
@@ -49,7 +49,11 @@ export const Explore = () => {
             return <TopicComponent topic={item as Topic}></TopicComponent>
           } else {
             return (
-              <TouchableOpacity onPress={navigateToArticleDetail}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigateToArticleDetail(item._id)
+                }}
+              >
                 <ArticleComponentBig
                   article={item as Article}
                 ></ArticleComponentBig>

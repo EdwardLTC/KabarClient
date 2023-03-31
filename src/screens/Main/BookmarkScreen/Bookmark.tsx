@@ -12,8 +12,8 @@ export const Bookmark = () => {
   const { colors } = useTheme()
   const styles = useStyles()
   const listArticles: Article[] = useAppSelector(ListArticles)
-  const navigateToArticleDetail = () => {
-    navigate(routes.articleDetail)
+  const navigateToArticleDetail = (idArticle: string) => {
+    navigate(routes.articleDetail, { id: idArticle }, 'ArticleDetail')
   }
 
   return (
@@ -32,7 +32,11 @@ export const Bookmark = () => {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={navigateToArticleDetail}>
+            <TouchableOpacity
+              onPress={() => {
+                navigateToArticleDetail(item._id)
+              }}
+            >
               <ArticleComponent article={item}></ArticleComponent>
             </TouchableOpacity>
           )
