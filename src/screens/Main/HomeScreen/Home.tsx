@@ -14,6 +14,7 @@ import { routes } from '@navigation'
 import { ListArticles } from '@reduxs'
 import { useLazyGetArticlesQuery } from '@reduxs/api/articlesService'
 import { useAppSelector } from '@hooks'
+import { Article } from '@utils/types'
 
 const Header_Max_Height = normalize.v(260)
 const Header_Min_Height = 0
@@ -22,7 +23,7 @@ export const Home = () => {
   const { colors } = useTheme()
   const styles = useStyles()
   const [getArticles] = useLazyGetArticlesQuery()
-  const listArticles = useAppSelector(ListArticles)
+  const listArticles: Article[] = useAppSelector(ListArticles)
   useEffect(() => {
     getArticles()
   }, [])

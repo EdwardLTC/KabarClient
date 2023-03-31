@@ -4,7 +4,7 @@ import {
   Text,
   TopicComponent,
 } from '@components'
-import { ArticleList, TopicList } from '@reduxs'
+import { ListArticles, TopicList } from '@reduxs'
 import { useTheme, makeStyles } from '@themes'
 import { Article, Topic } from '@utils/types'
 import React from 'react'
@@ -12,11 +12,7 @@ import { SectionList } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
-
-const data = [
-  { title: 'Topic', data: TopicList, renderType: '0' },
-  { title: 'Popular', data: ArticleList, renderType: '1' },
-]
+import { useAppSelector } from '@hooks'
 
 export const Explore = () => {
   const styles = useStyles()
@@ -25,6 +21,13 @@ export const Explore = () => {
   const navigateToArticleDetail = () => {
     navigate(routes.articleDetail)
   }
+
+  const listArticles: Article[] = useAppSelector(ListArticles)
+
+  const data = [
+    { title: 'Topic', data: TopicList, renderType: '0' },
+    { title: 'Popular', data: listArticles, renderType: '1' },
+  ]
 
   return (
     <Container style={styles.root}>

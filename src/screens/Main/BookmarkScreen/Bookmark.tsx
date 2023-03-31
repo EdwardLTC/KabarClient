@@ -1,15 +1,17 @@
 import { ArticleComponent, Container, Text } from '@components'
+import { useAppSelector } from '@hooks'
 import { routes } from '@navigation'
 import { navigate } from '@navigation/NavigationServices'
-import { ArticleList } from '@reduxs'
+import { ListArticles } from '@reduxs'
 import { makeStyles, useTheme } from '@themes'
+import { Article } from '@utils/types'
 import React from 'react'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 
 export const Bookmark = () => {
   const { colors } = useTheme()
   const styles = useStyles()
-
+  const listArticles: Article[] = useAppSelector(ListArticles)
   const navigateToArticleDetail = () => {
     navigate(routes.articleDetail)
   }
@@ -26,7 +28,7 @@ export const Bookmark = () => {
         Bookmark
       </Text>
       <FlatList
-        data={ArticleList}
+        data={listArticles}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
