@@ -7,6 +7,7 @@ export const authService = apiService.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation<AuthState, any>({
       query: (user) => {
+        console.log(EndPoint.login)
         return {
           url: EndPoint.login,
           method: 'POST',

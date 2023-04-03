@@ -70,9 +70,9 @@ const Alert: React.FC<AlertType> = (props) => {
         padding={10}
         radius={0}
         backgroundColor={colors.secondaryText}
-        {...cancelButtonProps} 
+        {...cancelButtonProps}
         onPress={() => {
-          dispatch(closeAlert())
+          dispatch(closeAlert({ id }))
           onCancel()
         }}
         title={cancelText || 'Huỷ'}
@@ -93,7 +93,7 @@ const Alert: React.FC<AlertType> = (props) => {
         margin={16}
         radius={0}
         {...okButtonProps}
-        onPress={() => (onOk ? onOk() : dispatch(closeAlert(() => {})))}
+        onPress={() => (onOk ? onOk() : dispatch(closeAlert({ id })))}
         title={okText || 'Đồng ý'}
         titleProps={{ color: colors.white, ...okTextProps }}
       />

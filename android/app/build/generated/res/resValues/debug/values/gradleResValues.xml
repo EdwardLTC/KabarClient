@@ -20,7 +20,7 @@
     <!-- Value from default config. -->
     <string name="APP_VERSION" translatable="false">"1.0.0"</string>
     <!-- Value from default config. -->
-    <string name="BASE_URL" translatable="false">"https://fpoly-hcm.herokuapp.com/api/"</string>
+    <string name="BASE_URL" translatable="false">"http://172.25.128.1:3000/api/"</string>
     <!-- Value from default config. -->
     <string name="ENV" translatable="false">"PRODCUTION"</string>
     <!-- Value from default config. -->
