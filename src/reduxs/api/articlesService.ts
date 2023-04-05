@@ -8,9 +8,7 @@ export const articlesService = apiService.injectEndpoints({
   endpoints: (builder) => ({
     getArticles: builder.query<ArticleState, void>({
       query: () => EndPoint.listArticle,
-      transformResponse: (response: ListArticleResponse) => {
-        return response
-      },
+      transformResponse: (response: ListArticleResponse) => response,
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled
@@ -21,12 +19,10 @@ export const articlesService = apiService.injectEndpoints({
 
     getArticleDetail: builder.query<Article, string>({
       query: (id) => EndPoint.articleDetails + id + '/detail',
-      transformResponse: (response: ListArticleResponse) => {
-        console.log(response)
-        return response.data[0]
-      },
+      transformResponse: (response: ListArticleResponse) => response.data[0],
     }),
   }),
 })
 
-export const { useLazyGetArticlesQuery, useLazyGetArticleDetailQuery} = articlesService
+export const { useLazyGetArticlesQuery, useLazyGetArticleDetailQuery } =
+  articlesService

@@ -8,7 +8,7 @@ import { useLoginMutation } from '@reduxs/api/authService'
 export const Login = () => {
   const styles = useStyles()
   const { colors } = useTheme()
-  const [email, setEmail] = React.useState<string>('nguyen@gmail.com')
+  const [email, setEmail] = React.useState<string>('lethanhcong@')
   const [password, setPassword] = React.useState<string>('1')
 
   const [login] = useLoginMutation()

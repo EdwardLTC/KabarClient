@@ -25,6 +25,7 @@ const Alert: React.FC<AlertType> = (props) => {
     okText,
     okTextProps,
     okButtonProps,
+    onOutSidePress,
   } = props
   const dispatch = useDispatch()
   const progress = useRef(new Animated.Value(0)).current
@@ -119,7 +120,9 @@ const Alert: React.FC<AlertType> = (props) => {
       alignCenter
       justifyCenter
     >
-      <TouchableWithoutFeedback onPress={_onBackdropPress}>
+      <TouchableWithoutFeedback
+        onPress={onOutSidePress ? onOutSidePress : _onBackdropPress}
+      >
         <Animated.View style={[styles.backdrop, { opacity }]} />
       </TouchableWithoutFeedback>
       <Animated.View

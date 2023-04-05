@@ -11,9 +11,10 @@ import {
 import { useAppSelector } from '@hooks'
 import { routes } from '@navigation'
 import { navigate } from '@navigation/NavigationServices'
-import { ArticleList, getUserInfo } from '@reduxs'
+import {  ListArticles, getUserInfo } from '@reduxs'
 import { UserInfo } from '@reduxs/types'
 import { makeStyles, useTheme } from '@themes'
+import { Article } from '@utils/types'
 import React from 'react'
 import { Linking, ScrollView } from 'react-native'
 
@@ -21,6 +22,7 @@ export const Profile = () => {
   const { colors } = useTheme()
   const styles = useStyles()
   const userInfo: UserInfo = useAppSelector(getUserInfo)
+  const listArticles: Article[] = useAppSelector(ListArticles)
 
   const navigateToSetting = () => {
     navigate(routes.setting)
@@ -112,7 +114,7 @@ export const Profile = () => {
         showsVerticalScrollIndicator={false}
       >
         {_renderInfo()}
-        {ArticleList.map((item) => {
+        {listArticles.map((item) => {
           return (
             <ArticleComponent article={item} key={item._id}></ArticleComponent>
           )
