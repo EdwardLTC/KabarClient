@@ -13,3 +13,5 @@ export * from './NextArrowIcon'
 export * from './SecurityIcon'
 export * from './HelpIcon'
 export * from './LogoutIcon'
+
+export * from './AddIcon'

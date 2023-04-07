@@ -11,7 +11,6 @@ import {
 } from '@assets'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useLogoutMutation } from '@reduxs'
-import { useDispatch } from 'react-redux'
 
 type ItemSettingProps = {
   icon: ReactNode
@@ -19,7 +18,7 @@ type ItemSettingProps = {
   disableRightIcon?: boolean
 }
 
-export default function SettingProfile() {
+export const SettingProfile = () => {
   const styles = useStyles()
   const [Logout] = useLogoutMutation()
 

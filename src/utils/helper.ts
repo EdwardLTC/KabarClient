@@ -10,6 +10,51 @@ export const CustomToastDev = () => {
   // Toast.show(I18n.t('handleError.developing'));
 }
 
+export const formatDate = (_day?: Date) => {
+  if (!_day) return ''
+  const newDate = new Date(_day)
+  const day = newDate.getDate()
+  const month = newDate.getMonth() + 1
+  const year = newDate.getFullYear()
+  const hour = newDate.getHours()
+  const miniutes = newDate.getMinutes()
+
+  let dayString = day.toString()
+  let monthString = month.toString()
+  let yearString = year.toString()
+  let hourString = hour.toString()
+  let miniuteString = miniutes.toString()
+
+  if (day < 10) {
+    dayString = '0' + dayString
+  }
+  if (month < 10) {
+    monthString = '0' + monthString
+  }
+  if (hour < 10) {
+    hourString = '0' + hourString
+  }
+  if (miniutes < 10) {
+    miniuteString = '0' + miniuteString
+  }
+
+  return (
+    hourString +
+    ':' +
+    miniuteString +
+    ' - ' +
+    dayString +
+    '/' +
+    monthString +
+    '/' +
+    yearString
+  )
+}
+
+export const transformUrl = (url: string) => {
+  return url.replace('http://localhost', 'http://172.25.128.1') //change to your ip
+}
+
 // export const convertCurrency = value => {
 //   if (value == null) {
 //     return 0;

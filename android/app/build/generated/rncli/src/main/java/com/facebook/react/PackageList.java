@@ -23,6 +23,8 @@ import com.emeraldsanto.encryptedstorage.RNEncryptedStoragePackage;
 import com.dylanvann.fastimage.FastImageViewPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-image-picker
+import com.imagepicker.ImagePickerPackage;
 // react-native-permissions
 import com.zoontek.rnpermissions.RNPermissionsPackage;
 // react-native-reanimated
@@ -84,6 +86,7 @@ public class PackageList {
       new RNEncryptedStoragePackage(),
       new FastImageViewPackage(),
       new RNGestureHandlerPackage(),
+      new ImagePickerPackage(),
       new RNPermissionsPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

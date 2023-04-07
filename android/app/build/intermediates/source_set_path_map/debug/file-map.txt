@@ -40,7 +40,8 @@ com.fservice.app-packaged_res-38 G:\Kabar\client\node_modules\react-native-devic
 com.fservice.app-packaged_res-39 G:\Kabar\client\node_modules\react-native-encrypted-storage\android\build\intermediates\packaged_res\debug
 com.fservice.app-packaged_res-40 G:\Kabar\client\node_modules\react-native-fast-image\android\build\intermediates\packaged_res\debug
 com.fservice.app-packaged_res-41 G:\Kabar\client\node_modules\react-native-gesture-handler\android\build\intermediates\packaged_res\debug
-com.fservice.app-packaged_res-42 G:\Kabar\client\node_modules\react-native-permissions\android\build\intermediates\packaged_res\debug
-com.fservice.app-packaged_res-43 G:\Kabar\client\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
-com.fservice.app-packaged_res-44 G:\Kabar\client\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
-com.fservice.app-packaged_res-45 G:\Kabar\client\node_modules\react-native-svg\android\build\intermediates\packaged_res\debug
+com.fservice.app-packaged_res-42 G:\Kabar\client\node_modules\react-native-image-picker\android\build\intermediates\packaged_res\debug
+com.fservice.app-packaged_res-43 G:\Kabar\client\node_modules\react-native-permissions\android\build\intermediates\packaged_res\debug
+com.fservice.app-packaged_res-44 G:\Kabar\client\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
+com.fservice.app-packaged_res-45 G:\Kabar\client\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.fservice.app-packaged_res-46 G:\Kabar\client\node_modules\react-native-svg\android\build\intermediates\packaged_res\debug

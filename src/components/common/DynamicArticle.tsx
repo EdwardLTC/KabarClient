@@ -1,9 +1,9 @@
 import { Block, Text, Image } from '@components/base'
 import React, { FC } from 'react'
 import { useTheme } from '@themes'
-import { Article } from '@utils/types'
 import { TouchableOpacity } from 'react-native'
-import { images } from '@assets'
+import { Article } from '@reduxs/types'
+import { formatDate } from '@utils/helper'
 
 type ArticleComponentProps = {
   article?: Article
@@ -64,7 +64,7 @@ export const DynamicArticle: FC<ArticleComponentProps> = (props) => {
         </Text>
         <Block row>
           <Image
-            source={images.placeholder}
+            source={{ uri: article?.createdBy.avatar }}
             width={20}
             height={20}
             radius={10}
@@ -74,8 +74,18 @@ export const DynamicArticle: FC<ArticleComponentProps> = (props) => {
             fontWeight="600"
             color={colors.secondaryText}
             size={13}
+            lineHeight={20}
           >
-            BBC News
+            {article?.createdBy.name || 'Anonymous'}
+          </Text>
+          <Text
+            marginLeft={20}
+            fontWeight="600"
+            color={colors.secondaryText}
+            size={13}
+            lineHeight={20}
+          >
+            {formatDate(article?.createdAt)}
           </Text>
         </Block>
       </Block>

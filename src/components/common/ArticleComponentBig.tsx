@@ -1,11 +1,12 @@
 import { Block, Text, Image } from '@components/base'
 import React, { FC } from 'react'
 import { useTheme } from '@themes'
-import { Article } from '@utils/types'
 import { images } from '@assets'
+import { Article } from '@reduxs/types'
+import { formatDate } from '@utils/helper'
 
 type ArticleComponentProps = {
-  article?: Article
+  article: Article
 }
 
 export const ArticleComponentBig: FC<ArticleComponentProps> = (props) => {
@@ -19,7 +20,7 @@ export const ArticleComponentBig: FC<ArticleComponentProps> = (props) => {
         radius={6}
         width={'100%'}
         height={183}
-        source={{ uri: article?.image }}
+        source={{ uri: article.image }}
       ></Image>
       <Block>
         <Text
@@ -38,12 +39,12 @@ export const ArticleComponentBig: FC<ArticleComponentProps> = (props) => {
           color={colors.black}
           numberOfLines={1}
         >
-          {article?.title}
+          {article.title}
         </Text>
 
         <Block row>
           <Image
-            source={images.placeholder}
+            source={{ uri: article.createdBy.avatar }}
             width={20}
             height={20}
             radius={10}
@@ -55,7 +56,16 @@ export const ArticleComponentBig: FC<ArticleComponentProps> = (props) => {
             size={13}
             lineHeight={20}
           >
-            BBC News
+            {article.createdBy.name || 'Anonymous'}
+          </Text>
+          <Text
+            marginLeft={20}
+            fontWeight="600"
+            color={colors.secondaryText}
+            size={13}
+            lineHeight={20}
+          >
+            {formatDate(article.createdAt)}
           </Text>
         </Block>
       </Block>

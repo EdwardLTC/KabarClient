@@ -14,4 +14,7 @@ export enum EndPoint {
   searchArticle = 'articles/search?/title=',
   createArticle = 'articles',
   articleDetails = 'articles/',
+
+  //media
+  postMedia = 'media/upload',
 }

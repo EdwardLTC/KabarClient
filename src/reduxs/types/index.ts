@@ -1,3 +1,5 @@
 export * from './authType'
 export * from './loadingType'
 export * from './commonType'
+export * from './mediaType'
+export * from './articleType'

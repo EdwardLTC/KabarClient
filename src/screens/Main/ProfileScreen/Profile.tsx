@@ -11,7 +11,7 @@ import {
 import { useAppSelector } from '@hooks'
 import { routes } from '@navigation'
 import { navigate } from '@navigation/NavigationServices'
-import {  ListArticles, getUserInfo } from '@reduxs'
+import { ListArticles, getUserInfo } from '@reduxs'
 import { UserInfo } from '@reduxs/types'
 import { makeStyles, useTheme } from '@themes'
 import { Article } from '@utils/types'
@@ -26,6 +26,10 @@ export const Profile = () => {
 
   const navigateToSetting = () => {
     navigate(routes.setting)
+  }
+
+  const navigateAddArticle = () => {
+    navigate(routes.addArticle)
   }
 
   const doOpenWebsite = () => {
@@ -123,6 +127,34 @@ export const Profile = () => {
     )
   }
 
+  const _renderFloatingButton = () => {
+    return (
+      <Block
+        absolute
+        bottom={0}
+        right={0}
+        marginRight={25}
+        marginBottom={25}
+        alignCenter
+        justifyCenter
+      >
+        <Button
+          title="+"
+          titleProps={{
+            marginTop: 6,
+            size: 24,
+          }}
+          justifyCenter
+          alignCenter
+          width={54}
+          height={54}
+          radius={27}
+          onPress={navigateAddArticle}
+        ></Button>
+      </Block>
+    )
+  }
+
   return (
     <Container style={styles.root}>
       <HeaderTools
@@ -132,6 +164,7 @@ export const Profile = () => {
         onToolsPress={navigateToSetting}
       ></HeaderTools>
       {_renderMyArticles()}
+      {_renderFloatingButton()}
     </Container>
   )
 }

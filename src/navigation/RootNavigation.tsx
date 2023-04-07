@@ -14,8 +14,9 @@ import {
   Home,
   Profile,
   Trending,
+  AddArticle,
+  SettingProfile,
 } from '@screens/Main'
-import SettingProfile from '@screens/Main/ProfileScreen/SettingProfile'
 import React, { FC } from 'react'
 import { BottomBar } from './components'
 import { navigationRef } from './NavigationServices'
@@ -88,6 +89,7 @@ export const RootNavigation = () => {
           <Main.Screen name={routes.articleDetail} component={ArticleDetail} />
           <Main.Screen name={routes.trending} component={Trending} />
           <Main.Screen name={routes.setting} component={SettingProfile} />
+          <Main.Screen name={routes.addArticle} component={AddArticle} />
         </Main.Navigator>
       )}
     </NavigationContainer>

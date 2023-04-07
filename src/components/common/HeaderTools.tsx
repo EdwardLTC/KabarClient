@@ -21,7 +21,7 @@ export const HeaderTools: FC<HeaderProps> = (props) => {
     disabledRightIcon,
   } = props
   return (
-    <Block row space="between" paddingHorizontal={4}>
+    <Block row space="between" paddingHorizontal={4} alignCenter>
       <TouchableOpacity onPress={onBackPress}>
         {disabledLeftIcon ? null : <BackArrowIcon></BackArrowIcon>}
       </TouchableOpacity>

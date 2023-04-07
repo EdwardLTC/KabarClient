@@ -13,12 +13,18 @@ export interface Article {
   title: string
   content: string
   image: string
-  createdAt: string
-  createdBy: CreatedBy
+  createdAt: Date
+  createdBy: ArticleCreateedBy
 }
 
-export interface CreatedBy {
+export interface ArticleCreateedBy {
   _id: string
   name: string
   avatar: string
+}
+
+export interface PostArticleRequest {
+  title: string
+  content: string
+  image: string
 }

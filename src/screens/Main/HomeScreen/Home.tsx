@@ -6,17 +6,22 @@ import {
   DynamicArticle,
 } from '@components'
 import { useTheme, makeStyles, normalize } from '@themes'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { GlassIcon, LogoIcon } from '@assets/icons'
-import { TouchableOpacity, Animated, ScrollView } from 'react-native'
+import {
+  TouchableOpacity,
+  Animated,
+  ScrollView,
+  RefreshControl,
+} from 'react-native'
 import { navigate } from '@navigation/NavigationServices'
 import { routes } from '@navigation'
 import { ListArticles } from '@reduxs'
 import { useLazyGetArticlesQuery } from '@reduxs/api/articlesService'
 import { useAppSelector } from '@hooks'
-import { Article } from '@utils/types'
+import { Article } from '@reduxs/types'
 
-const Header_Max_Height = normalize.v(260)
+const Header_Max_Height = normalize.v(280)
 const Header_Min_Height = 0
 
 export const Home = () => {
@@ -24,13 +29,24 @@ export const Home = () => {
   const styles = useStyles()
   const [getArticles] = useLazyGetArticlesQuery()
   const listArticles: Article[] = useAppSelector(ListArticles)
+  let scrollOffsetY = useRef(new Animated.Value(0)).current
+  const scrollViewRef = useRef<ScrollView>(null)
+  const [refreshing, setRefreshing] = useState(false)
+
+  const doGetArticles = async () => {
+    await getArticles()
+  }
+
   useEffect(() => {
-    getArticles()
+    doGetArticles()
   }, [])
 
-  const scrollViewRef = useRef<ScrollView>(null)
+  const onRefresh = () => {
+    setRefreshing(true)
+    doGetArticles()
+    setRefreshing(false)
+  }
 
-  let scrollOffsetY = useRef(new Animated.Value(0)).current
   const animateHeaderHeight = scrollOffsetY.interpolate({
     inputRange: [0, Header_Max_Height - Header_Min_Height],
     outputRange: [Header_Max_Height, Header_Min_Height],
@@ -116,6 +132,9 @@ export const Home = () => {
       <Block backgroundColor={colors.background} flex>
         {_renderMenuTools()}
         <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
           ref={scrollViewRef}
           style={{ backgroundColor: colors.background, height: '100%' }}
           scrollEventThrottle={16}
@@ -126,6 +145,7 @@ export const Home = () => {
           )}
         >
           {listArticles.map((item) => {
+            if (item._id === listArticles[0]._id) return null
             return (
               <TouchableOpacity
                 onPress={() => navigateToArticleDetail(item._id)}

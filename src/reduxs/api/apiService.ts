@@ -9,7 +9,12 @@ import {
   FetchBaseQueryMeta,
   retry,
 } from '@reduxjs/toolkit/query/react'
-import { hideLoading, showAlert, showLoading } from '@reduxs/reducers'
+import {
+  hideLoading,
+  removeAuthInfo,
+  showAlert,
+  showLoading,
+} from '@reduxs/reducers'
 import { Mutex } from 'async-mutex'
 import Config from 'react-native-config'
 
@@ -26,6 +31,7 @@ const handleError = (
   },
   api: BaseQueryApi,
 ) => {
+  console.log('responseError', responseError)
   api.dispatch(
     showAlert({
       id: 'handleErrorDefault_alert',
@@ -92,7 +98,7 @@ const baseQueryWithReauth: BaseQueryFn<
           // retry the initial query
           result = await baseQuery(args, api, extraOptions)
         } else {
-          // api.dispatch(loggedOut());
+          // api.dispatch(removeAuthInfo())
         }
       } finally {
         // release must be called once the mutex should be released again.
