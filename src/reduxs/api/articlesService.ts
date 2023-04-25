@@ -12,7 +12,7 @@ import { transformUrl } from '@utils/helper'
 export const articlesService = apiService.injectEndpoints({
   endpoints: (builder) => ({
     getArticles: builder.query<ArticleState, void>({
-      query: () => EndPoint.listArticle,
+      query: () => EndPoint.article,
       transformResponse: (response: ListArticleResponse) => {
         return {
           ...response,
@@ -31,9 +31,10 @@ export const articlesService = apiService.injectEndpoints({
     }),
 
     getArticleDetail: builder.query<Article, string>({
-      query: (id) => EndPoint.articleDetails + id + '/detail',
+      query: (id) => EndPoint.article + id,
       transformResponse: (response: ListArticleResponse) => {
         const data = response.data[0]
+        return data
         return {
           ...data,
           image: transformUrl(response.data[0].image),
@@ -44,7 +45,7 @@ export const articlesService = apiService.injectEndpoints({
     postArticle: builder.mutation<any, PostArticleRequest>({
       query: (article) => {
         return {
-          url: EndPoint.createArticle,
+          url: EndPoint.article,
           method: 'POST',
           body: article,
         }

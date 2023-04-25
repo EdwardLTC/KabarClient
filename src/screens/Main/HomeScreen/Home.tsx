@@ -81,22 +81,24 @@ export const Home = () => {
 
   const _renderDynamicArticle = () => {
     return (
-      <TouchableOpacity
-        onPress={() => navigateToArticleDetail(listArticles[0]._id)}
-      >
-        <Animated.View
-          style={[
-            {
-              height: animateHeaderHeight,
-            },
-          ]}
+      listArticles.length > 0 && (
+        <TouchableOpacity
+          onPress={() => navigateToArticleDetail(listArticles[0]._id)}
         >
-          <DynamicArticle
-            article={listArticles[0]}
-            onPressTrending={gotoTrending}
-          ></DynamicArticle>
-        </Animated.View>
-      </TouchableOpacity>
+          <Animated.View
+            style={[
+              {
+                height: animateHeaderHeight,
+              },
+            ]}
+          >
+            <DynamicArticle
+              article={listArticles[0]}
+              onPressTrending={gotoTrending}
+            ></DynamicArticle>
+          </Animated.View>
+        </TouchableOpacity>
+      )
     )
   }
 
@@ -128,34 +130,36 @@ export const Home = () => {
   return (
     <Container style={styles.root}>
       {_renderHeader()}
-      {_renderDynamicArticle()}
-      <Block backgroundColor={colors.background} flex>
-        {_renderMenuTools()}
-        <ScrollView
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-          }
-          ref={scrollViewRef}
-          style={{ backgroundColor: colors.background, height: '100%' }}
-          scrollEventThrottle={16}
-          showsVerticalScrollIndicator={false}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
-            { useNativeDriver: false },
-          )}
-        >
-          {listArticles.map((item) => {
-            if (item._id === listArticles[0]._id) return null
-            return (
-              <TouchableOpacity
-                onPress={() => navigateToArticleDetail(item._id)}
-                key={item._id}
-              >
-                <ArticleComponent article={item}></ArticleComponent>
-              </TouchableOpacity>
-            )
-          })}
-        </ScrollView>
+      <Block>
+        {_renderDynamicArticle()}
+        <Block backgroundColor={colors.background} flex>
+          {_renderMenuTools()}
+          <ScrollView
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+            ref={scrollViewRef}
+            style={{ backgroundColor: colors.background, height: '100%' }}
+            scrollEventThrottle={16}
+            showsVerticalScrollIndicator={false}
+            onScroll={Animated.event(
+              [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
+              { useNativeDriver: false },
+            )}
+          >
+            {listArticles.map((item) => {
+              if (item._id === listArticles[0]._id) return null
+              return (
+                <TouchableOpacity
+                  onPress={() => navigateToArticleDetail(item._id)}
+                  key={item._id}
+                >
+                  <ArticleComponent article={item}></ArticleComponent>
+                </TouchableOpacity>
+              )
+            })}
+          </ScrollView>
+        </Block>
       </Block>
     </Container>
   )

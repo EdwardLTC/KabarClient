@@ -31,7 +31,6 @@ const handleError = (
   },
   api: BaseQueryApi,
 ) => {
-  console.log('responseError', responseError)
   api.dispatch(
     showAlert({
       id: 'handleErrorDefault_alert',
@@ -68,7 +67,6 @@ const baseQueryWithReauth: BaseQueryFn<
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
   api.dispatch(showLoading())
-
   // wait until the mutex is available without locking it
   await mutex.waitForUnlock()
 
@@ -80,6 +78,7 @@ const baseQueryWithReauth: BaseQueryFn<
   }
 
   if (result.error.status === 401) {
+    api.dispatch(removeAuthInfo())
     // checking whether the mutex is locked
     if (!mutex.isLocked()) {
       const release = await mutex.acquire()
@@ -98,7 +97,7 @@ const baseQueryWithReauth: BaseQueryFn<
           // retry the initial query
           result = await baseQuery(args, api, extraOptions)
         } else {
-          // api.dispatch(removeAuthInfo())
+          api.dispatch(removeAuthInfo())
         }
       } finally {
         // release must be called once the mutex should be released again.

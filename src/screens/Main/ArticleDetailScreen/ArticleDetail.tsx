@@ -16,14 +16,14 @@ export const ArticleDetail = (props: Route) => {
   const [getDetailsArticle] = useLazyGetArticleDetailQuery()
   const { id } = props.route.params
 
-  useEffect(() => {
-    fetchData()
-  }, [id])
-
   const fetchData = async () => {
     const res = await getDetailsArticle(id)
     setArticle(res.data)
   }
+
+  useEffect(() => {
+    fetchData()
+  }, [id])
 
   const _renderHeader = () => {
     return (

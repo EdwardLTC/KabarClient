@@ -22,7 +22,7 @@ public final class BuildConfig {
   // Field from default config.
   public static final String APP_VERSION = "1.0.0";
   // Field from default config.
-  public static final String BASE_URL = "http://172.25.128.1:3000/api/";
+  public static final String BASE_URL = "http://192.168.1.202:3000/api/";
   // Field from default config.
   public static final String ENV = "PRODCUTION";
   // Field from default config.
